@@ -598,3 +598,13 @@ footer{
     color: var(--second-title-color);
     transition: 0.4s;
 }
+
+.iconHeader:hover{
+    border-radius: 7px;
+    scale: 1.2;
+    transition: 0.4s;
+}
+
+#link-logo-header:hover{
+    background-color: transparent;
+}

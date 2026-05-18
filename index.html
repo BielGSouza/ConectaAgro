@@ -6,24 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apresentação - Agrohub</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./script/moveMenu.js"></script>
 </head>
 
 <body>
     <header>
         <div id="header">
-            <img src="./assets/header/logo.png" alt="Logo da Agrohub">
+            <a href="./index.html" id="link-logo-header">
+                <img src="./assets/header/logo.png" alt="Logo da Agrohub">
+            </a>
             <input type="text" id="input-Pesquisar-Header" placeholder="Pesquisar">
             <nav>
                 <div class="linha-vertical"></div>
                 <div id="nav-itens">
-                    <img src="./assets/header/icons/home.svg" alt="icone de home">
-                    <img src="./assets/header/icons/news.svg" alt="icone de notícias">
-                    <img src="./assets/header/icons/store.svg" alt="icone de loja">
-                    <img src="./assets/header/icons/message.svg" alt="icone de mensagem">
-                    <img src="./assets/header/icons/support.svg" alt="icone de suporte">
+                    <img class="iconHeader" src="./assets/header/icons/home.svg" alt="icone de home" style="background-color: rgba(128, 128, 128, 0.3); border-radius: 7px; scale: 1.2;">
+                    <img class="iconHeader" src="./assets/header/icons/news.svg" alt="icone de notícias">
+                    <img class="iconHeader" src="./assets/header/icons/store.svg" alt="icone de loja">
+                    <img class="iconHeader" src="./assets/header/icons/message.svg" alt="icone de mensagem">
+                    <img class="iconHeader" src="./assets/header/icons/support.svg" alt="icone de suporte">
                 </div>
                 <div class="linha-vertical"></div>
-                <img src="./assets/header/icons/setaHeader.svg" alt="icone de seta para baixo">
+                <div onclick="moveMenu()">
+                    <img src="./assets/header/icons/setaHeader.svg" alt="icone de seta para baixo" id="imgSeta">
+                </div>
             </nav>
         </div>
         <div id="sub-header">
@@ -144,7 +149,8 @@
                             <p class="p-card">
                                 Com a AgroHub você consegue se conectar com outros produtores de regiões distantes ou
                                 proximas.
-                                E buscar soluções para o seu negócio com outros produtores, além de buscar menores preços de
+                                E buscar soluções para o seu negócio com outros produtores, além de buscar menores
+                                preços de
                                 produtos e maquinários.
                             </p>
                         </div>
@@ -154,7 +160,8 @@
                             <img src="./assets/sectionBeneficios/question.svg" alt="">
                             <h2 class="h2-card2">CONEXÃO</h2>
                             <p class="p-card">
-                                Obetenha suporte para tirar suas duvidas com outros produtores e buscar conhecimento atraves
+                                Obetenha suporte para tirar suas duvidas com outros produtores e buscar conhecimento
+                                atraves
                                 das postagens feitas na rede inclusa da AgroHub
                             </p>
                         </div>
@@ -164,7 +171,8 @@
                             <img src="./assets/sectionBeneficios/friend.svg" alt="Icone de inclusão">
                             <h2 class="h2-card1">INCLUSÃO</h2>
                             <p class="p-card">
-                                Na nossa comunidade você produtor rural que tem dificil acesso a outros produtores se sente
+                                Na nossa comunidade você produtor rural que tem dificil acesso a outros produtores se
+                                sente
                                 incluso dentro do mercado e no ambiente da agricultura.
                             </p>
                         </div>
@@ -174,7 +182,8 @@
                             <img src="./assets/sectionBeneficios/news.svg" alt="Icone de inclusão">
                             <h2 class="h2-card2">INCLUSÃO</h2>
                             <p class="p-card">
-                                Fique por dentro das mais novas novidades do mercado e no mundo, tenha na palma da sua mão
+                                Fique por dentro das mais novas novidades do mercado e no mundo, tenha na palma da sua
+                                mão
                                 previsões para colheita e plantação, além de variaçoes que acontece no mercado.
                             </p>
                         </div>
