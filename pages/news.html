@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticia - AgroHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/news.css">
+</head>
+<body>
+    <header>
+        <div id="header">
+            <a href="./news.html" id="link-logo-header">
+                <img src="../assets/header/logo.png" alt="Logo da Agrohub">
+            </a>
+            <input type="text" id="input-Pesquisar-Header" placeholder="Pesquisar">
+            <nav>
+                <div class="linha-vertical"></div>
+                <div id="nav-itens">
+                    <a href="../index.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/home.svg" alt="icone de home" style="background-color: rgba(128, 128, 128, 0.3); border-radius: 7px; scale: 1.2;">
+                    </a>
+                    <a href="./news.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/news.svg" alt="icone de notícias">
+                    </a>
+                    <a href="./store.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/store.svg" alt="icone de loja">
+                    </a>
+                    <a href="./messages.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/message.svg" alt="icone de mensagem">
+                    </a>
+                    <a href="./support.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/support.svg" alt="icone de suporte">
+                    </a>
+                </div>
+                <div class="linha-vertical"></div>
+                <div onclick="moveMenu()">
+                    <img src="../assets/header/icons/setaHeader.svg" alt="icone de seta para baixo" id="imgSeta">
+                </div>
+            </nav>
+        </div>
+        <div id="sub-header">
+            <a href="#em-alta">
+                <p>Em Alta</p>
+            </a>
+            <a href="#noticias">
+                <p>Noticías</p>
+            </a>
+            <a href="#publico-alvo">
+                <p>Novidades</p>
+            </a>
+        </div>
+    </header>
+    <main>
+        <section id="em-alta">
+            <div>
+                <h2 class="h2-news" id="h2-em-alta">Em Alta</h2>
+                <hr class="hrone">
+                <div id="noticias-em-alta">
+                    <div id="noticiaOne">
+                        <h3 class="h3-news">A taxa de reflorestamento cresce no Brasil</h4>
+                    </div>
+                    <div id="layout-card">
+                        <div id="noticiaTwo" class="card-noticias" style="background-image: url('../assets/pageNews/fotoTrator.png');">
+                            <h4 class="h4-news">Novo modelo de Trator é lançado no Brasil</h4>
+                        </div>
+                        <div id="noticiaThree" class="card-noticias" style="background-image: url('../assets/pageNews/fotoGraos.png');">
+                            <h4 class="h4-news">Preço dos Grãos aumenta em 20%</h4>
+                        </div>
+                        <div id="noticiaFour" class="card-noticias" style="background-image: url('../assets/pageNews/fotoGraos.png');">
+                            <h4 class="h4-news">Preço dos Grãos aumenta em 20%</h4>
+                        </div>
+                        <div id="noticiaFive" class="card-noticias" style="background-image: url('../assets/pageNews/fotoTrator.png');">
+                            <h4 class="h4-news">Novo modelo de Trator é lançado no Brasil</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="noticias">
+            <div>
+                <h2 class="h2-news">Noticías</h2>
+                <hr class="hrone">
+                <div id="cards-noticias">
+                    <div id="div-card-horizontal">
+                        <a id="a-ver-mais" onclick="verMais()">
+                            <p class="p-news" id="a-ver-mais">Ver Mais</p>
+                        </a>
+                    </div>
+                    <div id="div-card-vertical">
+                        <div class="card-vertical"></div>
+                        <div class="card-vertical"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="novidades">
+            <div>
+                <hr class="hrone">
+                <h2 class="h2-news" id="h2-novidades">Novidades</h2>
+                <div id="div-novidades">
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                    <div class="card-novidade"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="footer">
+            <h3 class="h3-footer">© 2023 AgroHub. Todos os direitos reservados.</h3>
+            <div style="display: flex; gap: 20px;">
+                <p class="p-footer">Criadores</p>
+                <p class="p-footer">Fale Conosco</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="../script/moveMenu.js"></script>
+    <script src="../script/btnVerMais.js"></script>
+</body>
+</html>
