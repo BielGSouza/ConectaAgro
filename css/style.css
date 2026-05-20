@@ -49,6 +49,7 @@
 :root {
     --primary-bg-color: #FFFFFF;
     --second-bg-color: #2F5C4F;
+    --third-bg-color: #A5D6A7;
     --header-bg-color: #EBE4E2;
     --bg-input-color: #FAFAF7;
     --primary-bg-card-color: #3B2E2A;
@@ -593,6 +594,7 @@ footer{
     font-family: var(--font-InterRegular);
     font-size: 12px;
     color: var(--primary-text-color);
+    cursor: pointer;
 }
 .p-footer:hover{
     color: var(--second-title-color);

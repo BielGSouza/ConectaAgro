@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - AgroHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/store.css">
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <a href="./news.html" id="link-logo-header">
+                <img src="../assets/header/logo.png" alt="Logo da Agrohub">
+            </a>
+            <input type="text" id="input-Pesquisar-Header" placeholder="Pesquisar">
+            <nav>
+                <div class="linha-vertical"></div>
+                <div id="nav-itens">
+                    <a href="../index.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/home.svg" alt="icone de home">
+                    </a>
+                    <a href="./news.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/news.svg" alt="icone de notícias">
+                    </a>
+                    <a href="./store.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/store.svg" alt="icone de loja"
+                            style="background-color: rgba(128, 128, 128, 0.3); border-radius: 7px; scale: 1.2;">
+                    </a>
+                    <a href="./messages.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/message.svg" alt="icone de mensagem">
+                    </a>
+                    <a href="./support.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/support.svg" alt="icone de suporte">
+                    </a>
+                </div>
+                <div class="linha-vertical"></div>
+                <div onclick="moveMenu()">
+                    <img src="../assets/header/icons/setaHeader.svg" alt="icone de seta para baixo" id="imgSeta">
+                </div>
+            </nav>
+        </div>
+        <div id="sub-header">
+            <a href="#">
+                <p>Carrinho</p>
+            </a>
+            <a href="#">
+                <p>Ferramentas</p>
+            </a>
+            <a href="#">
+                <p>Maquinários</p>
+            </a>
+            <a href="#">
+                <p>Produtos</p>
+            </a>
+        </div>
+    </header>
+    <main>
+        <section id="apresentacao">
+            <div id="son-apresentacao">
+                <div id="title-store">
+                    <h1 class="h1-store">Compre</h1>
+                    <div id="div-second-line-title">
+                        <h2 class="h2-store">Com alta</h2>
+                        <div id="div-h3">
+                            <h3 class="h3-store">Qualidade</h3>
+                            <h3 class="h3-store">Preço</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-apresentacao" style="position: absolute; top: 40px;"><img
+                    src="../assets/sectionStore/Group 11.svg" alt=""></div>
+            <div class="card-apresentacao" style="position: absolute; top: 70px; right: 0px;"><img
+                    src="../assets/sectionStore/Group 10.svg" alt=""></div>
+        </section>
+
+        <section id="card">
+            <div class="card-store" id="card-store-one">
+                <img class="img-card" src="../assets/sectionStore/photo-1573561368183-fd88bdb4503d 1.png" alt="">
+                <div class="text-card">
+                    <p>FERRAMENTAS</p>
+                    <button class="btn-card">
+                        <img src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg" alt="">
+                        CONFIRA
+                    </button>
+                </div>
+            </div>
+            <div class="card-store" id="card-store-two">
+                <img class="img-card" src="../assets/sectionStore/photo-1685335686020-e0b487f7f426 1.png" alt="">
+                <div class="text-card">
+                    <p>MAQUINAS</p>
+                    <button class="btn-card">
+                        <img src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg" alt="">
+                        CONFIRA
+                    </button>
+                </div>
+            </div>
+            <div class="card-store" id="card-store-three">
+                <img class="img-card" src="../assets/sectionStore/premium_photo-1661964196891-3d3f378a97b2 1.png"
+                    alt="">
+                <div class="text-card">
+                    <p>INSUMOS</p>
+                    <button class="btn-card">
+                        <img src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg" alt="">
+                        CONFIRA
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="melhores-ofertas">
+            <p class="p-store" style="z-index: 1;">Melhores Ofertas</p>
+            <div id="linhas-produtos" style="z-index: 1;">
+                <img id="btn-direita" class="setas-linha-produto"
+                    src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg" alt=""
+                    onclick="mover('direita')">
+                <div id="tela-rolavel-produtos">
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                </div>
+                <img id="btn-esquerda" class="setas-linha-produto"
+                    src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg" alt=""
+                    style="rotate: 180deg;" onclick="mover('esquerda')">
+            </div>
+            <img src="../assets/vetores/vetoresLinhas.svg" alt="Vetores de linhas"
+                style="position: absolute; width: 100%; height: 61%;">
+        </section>
+
+        <section id="produtos">
+            <div class="arte"></div>
+            <p class="p-store" id="p-two">Produtos</p>
+            <div id="dad-lista-de-produtos">
+                <div id="lista-de-produtos">
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                    <div class="card-produtos"></div>
+                </div>
+            </div>
+            <p id="p-ver-todos">Ver Todos</p>
+            <div class="arte"></div>
+        </section>
+
+        <section id="para-voce">
+            <p class="p-store" style="z-index: 1;">Produtos Para Você</p>
+            <div id="linhas-produtos" style="z-index: 1;">
+                <img id="btn-direita2" class="setas-linha-produto"
+                    src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg" alt=""
+                    onclick="moverTwo('direita')">
+                <div id="tela-rolavel-produtos2">
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                    <div class="card-produto"></div>
+                </div>
+                <img id="btn-esquerda2" class="setas-linha-produto"
+                    src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg" alt=""
+                    style="rotate: 180deg;" onclick="moverTwo('esquerda')">
+            </div>
+            <img src="../assets/vetores/vetoresLinhas.svg" alt="Vetores de linhas"
+                style="position: absolute; width: 100%; height: 61%;">
+        </section>
+<hr class="hrone">
+        <aside id="sub-rodape">
+            <div class="div-rodape">
+                <img src="../assets/sectionStore/box_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" alt="">
+                <div>
+                    <p class="p-rodape-title">Frete Grátis</p>
+                    <p class="p-rodape-text">Para todo Brasil</p>
+                </div>
+            </div>
+            <div class="div-rodape">
+                <img src="../assets/sectionStore/credit_card_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" alt="">
+                <div>
+                    <p class="p-rodape-title">Pagamento Seguro</p>
+                    <p class="p-rodape-text">10x sem juros no cartão</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <div id="footer">
+            <h3 class="h3-footer">© 2023 AgroHub. Todos os direitos reservados.</h3>
+            <div style="display: flex; gap: 20px;">
+                <p class="p-footer">Criadores</p>
+                <p class="p-footer">Fale Conosco</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/moveMenu.js"></script>
+    <script src="../script/scroll.js"></script>
+</body>
+
+</html>
