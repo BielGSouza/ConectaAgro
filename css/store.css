@@ -257,3 +257,7 @@
     font-family: var(--font-InterRegular);
     font-size: 14px;
 }
+
+.a-footer:hover{
+    background-color: transparent;
+}

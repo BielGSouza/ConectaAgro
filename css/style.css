@@ -50,10 +50,13 @@
     --primary-bg-color: #FFFFFF;
     --second-bg-color: #2F5C4F;
     --third-bg-color: #A5D6A7;
+    --fourty-bg-color: #D9D9D9;
+    --firty-bg-color: #FAFAF7;
     --header-bg-color: #EBE4E2;
     --bg-input-color: #FAFAF7;
     --primary-bg-card-color: #3B2E2A;
     --second-bg-card-color: #8D6E63;
+    --bg-contact-card: #FFFFFF;
     
     --primary-title-color: #32A638;
     --second-title-color: #A5D6A7;
@@ -614,4 +617,8 @@ footer{
 
 .nav-link{
     padding: 0px;
+}
+
+.a-footer:hover{
+    background-color: transparent;
 }

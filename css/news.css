@@ -203,3 +203,7 @@ main{
     background-color: gray;
     border-radius: 30px;
 }
+
+.a-footer:hover{
+    background-color: transparent;
+}

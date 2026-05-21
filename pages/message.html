@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens - AgroHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css//message.css">
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <a href="../index.html" id="link-logo-header">
+                <img src="../assets/header/logo.png" alt="Logo da Agrohub">
+            </a>
+            <input type="text" id="input-Pesquisar-Header" placeholder="Pesquisar">
+            <nav>
+                <div class="linha-vertical"></div>
+                <div id="nav-itens">
+                    <a href="../index.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/home.svg" alt="icone de home">
+                    </a>
+                    <a href="./news.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/news.svg" alt="icone de notícias">
+                    </a>
+                    <a href="./store.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/store.svg" alt="icone de loja">
+                    </a>
+                    <a href="./message.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/message.svg" alt="icone de mensagem"
+                            style="background-color: rgba(128, 128, 128, 0.3); border-radius: 7px; scale: 1.2;">
+                    </a>
+                    <a href="./sac.html" class="nav-link">
+                        <img class="iconHeader" src="../assets/header/icons/support.svg" alt="icone de suporte">
+                    </a>
+                </div>
+                <div class="linha-vertical"></div>
+            </nav>
+        </div>
+    </header>
+    <main id="main-message">
+        <section id="contatos"
+            style="background-image: url(../assets/vetores/vetoresLinhas.svg); background-attachment: fixed; background-size: cover;">
+            <div id="contatos-header">
+                <p id="p-header-contato">nome_usuario </p>
+                <input type="text" id="input-header-contatos" placeholder="Pesquisar contatos...">
+            </div>
+
+            <div id="contatos-body">
+                <div class="card-contato ativo">
+                    <div class="foto-contato"></div>
+                    <p>Neymar</p>
+                </div>
+                <div class="card-contato">
+                    <div class="foto-contato"></div>
+                    <p>Pedro</p>
+                </div>
+                <div class="card-contato">
+                    <div class="foto-contato"></div>
+                    <p>Hariel</p>
+                </div>
+                <div class="card-contato">
+                    <div class="foto-contato"></div>
+                    <p>Gabriel</p>
+                </div>
+                <div class="card-contato">
+                    <div class="foto-contato"></div>
+                    <p>Mike</p>
+                </div>
+                <div class="card-contato">
+                    <div class="foto-contato"></div>
+                    <p>Felipe</p>
+                </div>
+                <div class="card-contato">
+                    <div class="foto-contato"></div>
+                    <p>Bruno</p>
+                </div>
+                <div class="card-contato">
+                    <div class="foto-contato"></div>
+                    <p>Willian</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mensagens">
+            <div id="div-body-mensagem">
+                <div class="div-mensagem-recebida">
+                    <div class="mensagem-recebida">
+                        <p class="p-mensagem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti incidunt voluptates at numquam, laboriosam eius obcaecati autem explicabo perspiciatis doloremque adipisci, eaquemolestiae soluta velit eum nisi illo totam aut.</p>
+                    </div>
+                </div>
+                <div class="div-mensagem-enviada">
+                    <div class="message-enviada">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci perferendis, veritatis rem iusto deleniti, accusantium enim accusamus iste beatae ad consectetur minima ipsum. Maxime nemo veritatis autem, illum perferendis aspernatur?</p>
+                    </div>
+                </div>
+            </div>
+            <div id="div-head-mensagem">
+                <div id="input">
+                    <div id="input-message">
+                        <textarea name="" id="text-area-message" placeholder="Digite sua mensagem..."></textarea>
+                        <img id="icon-image"
+                            src="../assets/sectionMessage/image_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" alt="">
+                        <button id="btn-send-message" onclick="enviarMensagem()">
+                            <img id="icon-send"
+                                src="../assets/sectionMessage/send_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script/message.js"></script>
+</body>
+
+</html>
