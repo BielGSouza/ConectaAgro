@@ -2,9 +2,8 @@
 
 #main-sac {
     width: 100%;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     display: flex;
-    align-items: center;
     justify-content: center;
 
     background-image: url(../assets/vetores/Group\ 25.jpg);
@@ -13,7 +12,7 @@
 
 #section-pai {
     width: 100%;
-    height: auto;
+    min-height: calc(100vh - 80px);
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -31,6 +30,11 @@
 .p-sac {
     font-size: 12px;
     font-family: var(--font-InterRegular);
+}
+
+#section-formulario{
+    display: flex;
+    justify-content: center;
 }
 
 form {
@@ -124,20 +128,20 @@ label>p {
 #section-cards {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
 }
 
 .card-sac {
     width: 620px;
-    height: auto;
+    min-height: 25%;
     background-color: var(--firty-bg-color);
     border-radius: 30px;
     border: 1px solid rgba(0, 0, 0, 0.500);
     padding: 30px;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 50px;
 }
