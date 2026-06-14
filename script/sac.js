@@ -1,10 +1,10 @@
 function enviarFormulario() {
-    let nome = document.getElementById('in-nome')
-    let sobrenome = document.getElementById('in-sobrenome')
-    let email = document.getElementById('in-email')
-    let telefone = document.getElementById('in-telefone')
-    let assunto = document.getElementById('sel-assunto')
-    let mensagem = document.getElementById('area-mensagem')
+    let nome = document.getElementById('nome')
+    let sobrenome = document.getElementById('sobrenome')
+    let email = document.getElementById('email')
+    let telefone = document.getElementById('telefone')
+    let assunto = document.getElementById('assunto')
+    let mensagem = document.getElementById('mensagem')
 
     /* Verifica se os campos estão preenchidos */
     if (!nome.value || !sobrenome.value || !email.value || !telefone.value || !assunto.value || !mensagem.value) {
@@ -26,7 +26,7 @@ function enviarFormulario() {
 }
 
 /* Modifica os numeros do telefone para ficar bonito */
-const inputTelefone = document.getElementById('in-telefone');
+const inputTelefone = document.getElementById('telefone');
 
 inputTelefone.addEventListener('input', () => {
 

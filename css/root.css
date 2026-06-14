@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+:root {
+    --primary-bg-color: #FFFFFF;
+    --second-bg-color: #2F5C4F;
+    --third-bg-color: #A5D6A7;
+    --fourty-bg-color: #D9D9D9;
+    --firty-bg-color: #FAFAF7;
+    --header-bg-color: #EBE4E2;
+    --bg-input-color: #FAFAF7;
+    --primary-bg-card-color: #3B2E2A;
+    --second-bg-card-color: #8D6E63;
+    --bg-contact-card: #FFFFFF;
+    
+    --primary-title-color: #32A638;
+    --second-title-color: #A5D6A7;
+    --third-title-color: #263238;
+
+    --circle-one: #68793F;
+    --circle-two: #889F54;
+
+    --primary-text-color: #263238;
+    --second-text-color: #EBE4E2;
+
+    --font-InterExtraLight: 'InterExtraLight', sans-serif;
+    --font-InterLight: 'InterLight', sans-serif;
+    --font-InterRegular: 'InterRegular', sans-serif;
+    --font-InterMedium: 'InterMedium', sans-serif;
+    --font-InterSemiBold: 'InterSemiBold', sans-serif;
+    --font-InterBold: 'InterBold', sans-serif;
+    --font-InterThinItalic: 'InterThinItalic', sans-serif;
+    --font-InterLightItalic: 'InterLightItalic', sans-serif;
+    --font-InterMediumItalic: 'InterMediumItalic', sans-serif;
+    --font-InterSemiBoldItalic: 'InterSemiBoldItalic', sans-serif;
+}
