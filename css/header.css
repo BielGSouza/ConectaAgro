@@ -61,16 +61,17 @@ header {
 nav {
     display: flex;
     height: 100%;
-
+    gap: 30px
 }
 
 .item-nav {
     height: 100%;
-    width: 60px;
+    width: auto;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .item-nav:hover {
@@ -80,6 +81,22 @@ nav {
 .a-header {
     text-decoration: none;
     color: var(--primary-text-color);
+}
+.label-nav{
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: auto;
+    padding: 0px 2px;
+
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.item-nav:hover .label-nav{
+    max-width: 100px;
+    opacity: 1;
+    margin-left: 8px;
 }
 
 @media(max-width: 768px) {
