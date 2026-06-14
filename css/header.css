@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+.Exo-2 {
+    font-family: "Exo 2", Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+}
+
+.header {
+    padding: 0px 20px;
+    height: 60px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.200);
+    background-color: var(--header-bg-color);
+}
+
+#icone-menu {
+    display: none
+}
+
+.c-367588 {
+    color: #367588;
+}
+
+.c-2F5D50 {
+    color: #2F5D50;
+}
+
+.menuHamburguer {
+    display: none;
+    background-color: #fffcfb;
+    transition: max-height 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.200);
+}
+
+.ativo {
+    display: block;
+}
+
+.item-menu-hamburguer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #F8F4F3;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.item-menu-hamburguer:hover {
+    background-color: #eae6e5;
+}
+
+.item-menu-hamburguer>p {
+    font-size: 14px;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-weight: 200;
+}
+
+nav {
+    display: flex;
+    height: 100%;
+
+}
+
+.item-nav {
+    height: 100%;
+    width: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-nav:hover {
+    background-color: #F8F4F3;
+}
+
+.a-header {
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+@media(max-width: 768px) {
+    #icone-menu {
+        display: block
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menuHamburguer {
+        display: none;
+        background-color: #fffcfb;
+        transition: max-height 0.3s ease;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.200);
+
+        position: absolute;
+        width: 100%;
+    }
+
+    .ativo {
+        display: block;
+    }
+
+    .item-menu-hamburguer {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 15px 20px;
+        border-bottom: 1px solid #F8F4F3;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+    }
+
+    .item-menu-hamburguer:hover {
+        background-color: #eae6e5;
+    }
+
+    .item-menu-hamburguer>p {
+        font-size: 14px;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        font-weight: 200;
+    }
+}

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.footer{
+    padding: 5px 0px;
+    background-color: var(--header-bg-color);
+    position: sticky;
+    bottom: 0px;
+}
+
+.p-copy{
+    font-size: 10px;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.compFooter{
+    padding: 20px;
+    background-color: var(--header-bg-color);
+}
+
+.criadores{
+    overflow-x: auto;
+    gap: 20px;
+}
+
+.card-criador{
+    background-color: var(--second-bg-color);
+    padding: 5px;
+}
+
+.p-card-criadores-nome{
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: white;
+}
+.p-card-criadores-rm{
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: white;
+}
