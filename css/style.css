@@ -105,71 +105,9 @@ body {
     font-family: "Exo 2", Arial, Helvetica, sans-serif;
 }
 
-a{
-    text-decoration: none;
-    color: var(--primary-text-color);
-    padding: 4px 10px;
-}
-a:hover {
-    color: var(--second-title-color);
-    background-color: var(--second-bg-color);
-    border-radius: 15px;
-    transition: 0.4s;
-}
-
-header {
-    height: 40px;
-    width: 100%;
-    background-color: var(--header-bg-color);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.433);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-}
-
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
-    gap: 61px;
-    padding: 0px 45px;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 55px;
-}
-
-#nav-itens {
-    display: flex;
-    align-items: center;
-    gap: 31px;
-    width: 249px;
-}
 
 /* SUBHEADER */
 
-#sub-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    height: 30px;
-    width: 720px;
-    background-color: var(--header-bg-color);
-    border-radius: 0px 0px 0px 30px;
-    border-top: 1px solid var(--second-bg-color);
-    
-    position: relative;
-    left: 44%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.433);
-
-    font-family: var(--font-InterExtraLight);
-    font-size: 13px;
-}
 
 /*Padronização Input*/
 
