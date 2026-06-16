@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/root.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    
+
 </head>
 
 <body>
@@ -149,36 +149,24 @@
             </a>
         </div>
     </header>
+
     <main>
         <section id="initial">
             <div id="title">
-                <h1 id="title-h1">Conecta</h1>
-                <div style="display: flex; flex-direction: row; align-items: center; margin-left: -10px;">
-                    <h2 id="title-h2">Agro</h2>
-                </div>
-                <p id="title-p">Ligando voçê ao melhor do mercado.</p>
+                <h1 class="mb-0 fonte-conecta Exo-2 fw-bold titulo-conecta">Conecta</h1>
+                <h2 class="mb-0 fonte-agro Exo-2 fw-semibold fst-italic titulo-agro">Agro</h2>
+                <p class="mb-0 paragrafo text-white" id="title-p">Ligando voçê ao melhor do mercado.</p>
             </div>
-            <img src="assets/sectionInitial/fotoCampos.png" alt="Foto de campos" id="img-header-initial"
-                style="z-index: 1;">
-            <div class="circle" id="circle-2"></div>
-            <div class="circle" id="circle-1"></div>
-            <div class="circle" id="circle-3"></div>
-            <div class="circle" id="circle-4"></div>
+            <div class="div-img-initial"></div>
         </section>
 
         <section id="quem-somos">
-            <div>
-                <div id="title-quem-somos">
-                    <h2 id="title-quem-somosh">
-                        Quem <br>
-                        Somos?
-                    </h2>
-                    <h2 id="title-quem-somosh2">
-                        Quem <br>
-                        Somos?
-                    </h2>
+            <div class="text-titulo">
+                <div>
+                    <h2 class="Exo-2 titulos-apresentação fw-bold fst-italic mb-0" id="txt-quem">Quem</h2>
+                    <h2 class="Exo-2 titulos-apresentação fw-bold fst-italic mb-0" id="txt-somos">Somos?</h2>
                 </div>
-                <p id="p-quem-somos">A ConectaAgro é uma empresa criada para impulsionar a evolução da agricultura
+                <p class="paragrafo mb-0">A ConectaAgro é uma empresa criada para impulsionar a evolução da agricultura
                     brasileira por meio da inovação e da tecnologia. Trabalhamos conectando produtores, empresas e
                     oportunidades em uma única plataforma, criando um ambiente moderno, acessível e preparado para
                     atender às necessidades do agronegócio atual. Nosso compromisso é contribuir para um agro mais
@@ -186,31 +174,26 @@
             </div>
             <div id="div-imagens-quem-somos">
                 <img src="./assets/sectionQuemSomos/photoSecundaria.png" alt="Foto de uma planta na terra"
-                    id="ft-secundaria-one" style="z-index: 1;">
-                <img src="./assets/sectionQuemSomos/photoPrincipal.png" alt="Foto de um canteiro de uma plantação"
-                    style="position: absolute; right: 187px;">
-                <img src="./assets/sectionQuemSomos/photoSecundaria.png" alt="Foto de uma planta na terra"
+                    id="ft-secundaria-one" width="40%" style="z-index: 1;">
+                <img src="./assets/sectionQuemSomos/photoPrincipal.png" width="70%"
+                    alt="Foto de um canteiro de uma plantação">
+                <img src="./assets/sectionQuemSomos/photoSecundaria.png" alt="Foto de uma planta na terra" width="40%"
                     id="ft-secundaria-two">
             </div>
         </section>
 
         <section id="nosso-proposito">
-            <div style="z-index: 1;">
-                <div id="title-nosso-proposito">
-                    <h2 id="title-nosso-proposito-h2">Nosso <br> Propósito</h2>
-                    <h2 id="title-nosso-proposito-h">Nosso <br> Propósito</h2>
-                </div>
-                <p id="p-nosso-proposito">Nosso propósito é transformar a maneira como o agronegócio se conecta e cresce
+                <h2 class="Exo-2 titulos-apresentação fw-bold fst-italic mb-0" id="txt-nosso">Nosso</h2>
+                <h2 class="Exo-2 titulos-apresentação fw-bold fst-italic mb-0" id="txt-proposito">Proposito</h2>
+                <p class="paragrafo mb-0 paragrafo-nosso-proposito">Nosso propósito é transformar a maneira como o
+                    agronegócio se conecta e cresce
                     no
                     Brasil. Buscamos facilitar o acesso à informação, oportunidades e soluções inovadoras, promovendo
                     desenvolvimento, colaboração e crescimento sustentável para todos que fazem parte do setor agrícola.
                 </p>
-            </div>
-            <img src="assets/./vetores/vetoresLinhas.svg" alt="Vetores de linhas"
-                style="position: absolute; width: 100%; height: 100%;">
         </section>
 
-        <section id="publico-alvo">
+        <!-- <section id="publico-alvo">
             <div>
                 <div id="title-publico-alvo">
                     <h2 id="title-publico-alvo-h2">Público <br> Alvo</h2>
@@ -251,7 +234,8 @@
                             <img src="./assets/sectionBeneficios/conecct.svg" alt="Icone de coxão">
                             <h2 class="h2-card1">CONEXÃO</h2>
                             <p class="p-card">
-                                Com a ConectaAgro você consegue se conectar com outros produtores de regiões distantes ou
+                                Com a ConectaAgro você consegue se conectar com outros produtores de regiões distantes
+                                ou
                                 proximas.
                                 E buscar soluções para o seu negócio com outros produtores, além de buscar menores
                                 preços de
@@ -300,16 +284,17 @@
                     impulsionar o crescimento e a inovação no setor.
                 </p>
             </div>
-        </section>
+        </section> -->
     </main>
-    <div class="footer d-flex flex-column align-items-center">
-        <div class="d-flex gap-1">
-            <p class="mb-0 Exo-2 text-uppercase fw-bold c-367588">conecta</p>
-            <p class="mb-0 Exo-2 text-uppercase fw-bold c-2F5D50">agro</p>
-        </div>
-        <p class="p-copy mb-0">&copy ConectaAgro. Todos os direitos reservados.</p>
-    </div>
+
     <footer>
+        <div class="footer d-flex flex-column align-items-center">
+            <div class="d-flex gap-1">
+                <p class="mb-0 Exo-2 text-uppercase fw-bold c-367588">conecta</p>
+                <p class="mb-0 Exo-2 text-uppercase fw-bold c-2F5D50">agro</p>
+            </div>
+            <p class="p-copy mb-0">&copy ConectaAgro. Todos os direitos reservados.</p>
+        </div>
         <div class="compFooter d-flex flex-column align-items-center justify-content-center gap-3">
             <div class="d-flex justify-content-center w-100">
                 <div class="criadores d-flex">

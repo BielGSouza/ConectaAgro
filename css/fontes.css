@@ -11,6 +11,18 @@
     font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
+.titulos-apresentação{
+    font-size: clamp(64px, 9vw, 99px);
+}
+
+.fonte-conecta{
+    font-size: clamp(70px, 8vw, 96px);
+}
+
+.fonte-agro{
+    font-size: clamp(54px, 7vw, 80px);
+}
+
 .titulo{
     font-size: clamp(30px, 2vw, 36px);
 }

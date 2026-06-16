@@ -5,6 +5,7 @@
     background-color: var(--header-bg-color);
     position: sticky;
     bottom: 0px;
+    border-bottom: 1px solid #9EC7BB;
 }
 
 .p-copy{

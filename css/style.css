@@ -8,22 +8,27 @@
     font-family: 'InterExtraLight';
     src: url(../fonts/woff-hinted/Inter-ExtraLight.woff2) format('woff2');
 }
+
 @font-face {
     font-family: 'InterLight';
     src: url(../fonts/woff-hinted/Inter-Light.woff2) format('woff2');
 }
+
 @font-face {
     font-family: 'InterRegular';
     src: url(../fonts/woff-hinted/Inter-Regular.woff2) format('woff2');
 }
+
 @font-face {
     font-family: 'InterMedium';
     src: url(../fonts/woff-hinted/Inter-Medium.woff2) format('woff2');
 }
+
 @font-face {
     font-family: 'InterSemiBold';
     src: url(../fonts/woff-hinted/Inter-SemiBold.woff2) format('woff2');
 }
+
 @font-face {
     font-family: 'InterBold';
     src: url(../fonts/woff-hinted/Inter-Bold.woff2) format('woff2');
@@ -35,14 +40,17 @@
     font-family: 'InterThinItalic';
     src: url(../fonts/woff-hinted/Inter-ThinItalic.woff2) format('woff2');
 }
+
 @font-face {
     font-family: 'InterLightItalic';
     src: url(../fonts/woff-hinted/Inter-LightItalic.woff2) format('woff2');
 }
+
 @font-face {
     font-family: 'InterMediumItalic';
     src: url(../fonts/woff-hinted/Inter-MediumItalic.woff2) format('woff2');
 }
+
 @font-face {
     font-family: 'InterSemiBoldItalic';
     src: url(../fonts/woff-hinted/Inter-SemiBoldItalic.woff2) format('woff2');
@@ -59,7 +67,7 @@
     --primary-bg-card-color: #3B2E2A;
     --second-bg-card-color: #8D6E63;
     --bg-contact-card: #FFFFFF;
-    
+
     --primary-title-color: #32A638;
     --second-title-color: #A5D6A7;
     --third-title-color: #263238;
@@ -90,59 +98,27 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
 body {
-    height: auto;
-    width: 100%;
-    background-color: var(--primary-bg-color);
     font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
-.Exo-2{
-    font-family: "Exo 2", Arial, Helvetica, sans-serif;
+/* Titulo Conecta Agro */
+
+.titulo-conecta {
+    color: var(--primary-title-color);
 }
 
-
-/* SUBHEADER */
-
-
-/*Padronização Input*/
-
-input {
-    border: none;
-    
+.titulo-agro {
+    color: var(--second-title-color);
 }
 
-input:focus {
-    outline: none;
-}
+/* Section Inicial */
 
-/* Estilos para o input de pesquisa */
-
-#input-Pesquisar-Header {
-    width: 600px;
-    height: 30px;
-    border-radius: 30px;
-
-    display: flex;
-    align-items: center;
-    padding: 0px 40px;
-}
-
-/* Linha Vertical*/
-
-.linha-vertical {
-    height: 30px;
-    width: 1px;
-    background-color: var(--primary-text-color);
-}
-
-/* Section Inicial*/
-
-#initial{
+#initial {
     width: 100%;
     height: 283px;
     background-color: var(--second-bg-color);
@@ -154,144 +130,178 @@ input:focus {
     justify-content: space-between;
 }
 
-/* Estilos Titulo */
-
 #title {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    margin-left: 80px;
-    z-index: 998;
+    z-index: 10;
+    padding: 0px 40px 0px 40px;
 }
 
-#title-h1{
-    font-family: var(--font-InterBold);
-    color: var(--primary-title-color);
-    font-size: 96px;
+.img-initial {
+    border-radius: 999px 0px 0px 999px;
 }
 
-#title-h2{
-    font-family: var(--font-InterSemiBoldItalic);
-    color: var(--second-title-color);
-    font-size: 80px;
-    margin-top: -25px;
+.div-img-initial {
+    background-image: url(../assets/sectionInitial/fotoCampos.png);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 999px 0px 0px 999px;
 }
 
-#detalhe-h2 {
-    width: 9.52px;
-    height: 51.71px;
-    background-color: var(--second-title-color);
-    rotate: 9.5deg;
-    margin-top: -25px;
+/* Section Quem Somos  */
+
+.text-titulo {
+    padding: 50px 20px 50px 50px;
 }
 
-#title-p{
-    font-family: var(--font-InterMedium);
-    color: var(--second-text-color);
-    font-size: 20px;
+#txt-quem,
+#txt-somos {
+    position: relative;
+    color: var(--third-title-color);
 }
 
-/* Circulos no Section Inicial */
-
-.circle {
+#txt-quem::after {
+    content: "Quem";
     position: absolute;
-    border-radius: 50%;
+    left: 4px;
+    z-index: -1;
+    color: transparent;
+    font-size: clamp(64px, 9vw, 99px);
+
+    -webkit-text-stroke: 2px var(--third-title-color);
+    font-style: italic;
+    white-space: nowrap;
 }
 
-#circle-1 {
-    width: 283px;
-    height: 282px;
-    border: 3px solid var(--circle-one);
-    left: 427px;
-}
-#circle-2 {
-    width: 245px;
-    height: 245px;
-    border: 3px solid var(--circle-two);
-    left: 290px;
-}
-#circle-3 {
-    width: 283px;
-    height: 283px;
-    border: 3px solid var(--circle-two);
-    left: -136px;
-    top: 173px;
-}
-#circle-4 {
-    width: 309px;
-    height: 309px;
-    border: 3px solid var(--circle-one);
-    left: -55px;
-    top: -199px;
-}
+#txt-somos::after {
+    content: "Somos?";
+    position: absolute;
+    left: 4px;
+    z-index: -1;
+    color: transparent;
+    font-size: clamp(64px, 9vw, 99px);
 
-/* section Quem Somos */
+    -webkit-text-stroke: 2px var(--third-title-color);
+    font-style: italic;
+    white-space: nowrap;
+}
 
 #quem-somos {
-    width: 100%;
-    height: 657px;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15%;
 }
 
-#title-quem-somos{
-    height: auto;
-    width: auto;
-
+#div-imagens-quem-somos {
+    position: relative;
+    padding: 50px 50px 50px 20px;
     display: flex;
-    margin-top: 110px;
-    margin-left: 128px;
+    align-items: center;
+    justify-content: center;
 }
 
-#title-quem-somosh{
-    font-family: var(--font-InterMediumItalic);
-    font-size: 99px;
-    color: var(--third-title-color);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-#title-quem-somosh2{
-    font-family: var(--font-InterThinItalic);
-    font-size: 99px;
-    color: var(--third-title-color);
-    font-weight: lighter;
-    text-transform: uppercase;
-
-    margin-left: -400px;
-}
-
-#p-quem-somos {
-    width: 600px;
-    text-indent: 15px;
-    font-family: var(--font-InterRegular);
-    font-size: 16px;
-    margin-top: 25px;
-    margin-left: 133px;
-    line-height: 150%;
-}
-
-#div-imagens-quem-somos{
-    margin-top: 20px;
-}
-
-#ft-secundaria-one{
+#ft-secundaria-one {
     position: absolute;
-    right: 37px;
-    top: 383px;
+    right: 0px;
+    top: 19%;
 }
 
-#ft-secundaria-two{
+#ft-secundaria-two {
     position: absolute;
-    right: 423px;
-    top: 763px;
+    left: 0px;
+    bottom: 0px;
     z-index: -1;
 }
 
 /* Section Nosso Propósito */
 
-#nosso-proposito{
+#nosso-proposito {
+    background-color: var(--second-bg-color);
+    height: 582px;
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    clip-path: ellipse(115% 100% at 50% 0%);
+}
+
+#txt-nosso, #txt-proposito{
+    position: relative;
+    color: var(--second-title-color);
+    text-align: center;
+    display: inline-block;
+}
+
+#txt-nosso::after{
+    content: "Nosso";
+    position: absolute;
+    left: 4px;
+    z-index: -1;
+    color: transparent;
+    font-size: clamp(64px, 9vw, 99px);
+
+    -webkit-text-stroke: 2px var(--second-title-color);
+    font-style: italic;
+    white-space: nowrap;
+}
+
+#txt-proposito::after{
+    content: "Proposito";
+    position: absolute;
+    left: 4px;
+    z-index: -1;
+    color: transparent;
+    font-size: clamp(64px, 9vw, 99px);
+    text-align: center;
+
+    -webkit-text-stroke: 2px var(--second-title-color);
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.paragrafo-nosso-proposito{
+    color: var(--second-text-color);
+    text-align: center;
+}
+
+@media(max-width: 576px) {
+
+    /* Section Inicial  */
+
+    #initial {
+        display: block;
+        height: 50%;
+    }
+
+    #title {
+        text-align: center;
+        padding: 40px 0px 40px 0px;
+    }
+
+    .div-img-initial {
+        border-radius: 20px 20px 0px 0px;
+        width: 100%;
+        height: 205px;
+    }
+
+    /* Section Quem Somos  */
+
+    #div-imagens-quem-somos, .text-titulo {
+    padding: 20px;
+}
+}
+
+@media (max-width: 768px) {
+    #quem-somos {
+        display: block;
+    }
+}
+
+/* Section Nosso Propósito */
+
+/* #nosso-proposito {
     background-color: var(--second-bg-color);
     height: 582px;
     width: 100%;
@@ -301,49 +311,11 @@ input:focus {
     justify-content: center;
 
     clip-path: ellipse(115% 100% at 50% 0%);
-}
-
-#title-nosso-proposito{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    text-align: center;
-}
-
-#title-nosso-proposito-h2{
-    font-family: var(--font-InterThinItalic);
-    font-size: 99px;
-    color: var(--second-title-color);
-    font-weight: lighter;
-    text-transform: uppercase;
-
-}
-
-#title-nosso-proposito-h{
-    font-family: var(--font-InterMediumItalic);
-    font-size: 99px;
-    color: var(--second-title-color);
-    font-weight: bold;
-    text-transform: uppercase;
-    
-    margin-left: -530px;
-}
-
-#p-nosso-proposito{
-    width: 862px;
-    text-align: center;
-    color: var(--second-text-color);
-    margin: auto;
-    font-family: var(--font-InterRegular);
-    font-size: 16px;
-}
+} */
 
 /* Section Público Alvo */
 
-#publico-alvo{
+#publico-alvo {
     width: 100%;
     height: auto;
 
@@ -351,12 +323,12 @@ input:focus {
     text-align: end;
 }
 
-#title-publico-alvo{
+#title-publico-alvo {
     display: flex;
     justify-content: end;
 }
 
-#title-publico-alvo-h2{
+#title-publico-alvo-h2 {
     font-family: var(--font-InterThinItalic);
     font-size: 99px;
     color: var(--third-title-color);
@@ -366,7 +338,7 @@ input:focus {
     margin-right: -408px;
 }
 
-#title-publico-alvo-h{
+#title-publico-alvo-h {
     font-family: var(--font-InterMediumItalic);
     font-size: 99px;
     color: var(--third-title-color);
@@ -374,13 +346,13 @@ input:focus {
     text-transform: uppercase;
 }
 
-#div-p-publico-alvo{
+#div-p-publico-alvo {
     display: flex;
     justify-content: end;
     margin-top: 30px;
 }
 
-#p-publico-alvo{
+#p-publico-alvo {
     width: 790px;
     font-family: var(--font-InterRegular);
     font-size: 16px;
@@ -388,7 +360,7 @@ input:focus {
     margin-bottom: 119px;
 }
 
-#imgs-publico-alvo{
+#imgs-publico-alvo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -400,7 +372,7 @@ input:focus {
 
 /* Section Benefícios */
 
-#beneficios{
+#beneficios {
     width: 100%;
     height: auto;
 
@@ -408,12 +380,12 @@ input:focus {
     text-align: start;
 }
 
-#title-beneficios{
+#title-beneficios {
     display: flex;
     justify-content: start;
 }
 
-#title-beneficios-h2{
+#title-beneficios-h2 {
     font-family: var(--font-InterThinItalic);
     font-size: 99px;
     color: var(--third-title-color);
@@ -424,7 +396,7 @@ input:focus {
     margin-left: -572px;
 }
 
-#title-beneficios-h{
+#title-beneficios-h {
     font-family: var(--font-InterMediumItalic);
     font-size: 99px;
     color: var(--third-title-color);
@@ -432,7 +404,7 @@ input:focus {
     text-transform: uppercase;
 }
 
-#p-beneficios{
+#p-beneficios {
     width: 786px;
     font-family: var(--font-InterRegular);
     font-size: 16px;
@@ -444,7 +416,7 @@ input:focus {
     text-indent: 15px;
 }
 
-#dad-card{
+#dad-card {
     width: 100%;
     height: auto;
     display: flex;
@@ -455,14 +427,14 @@ input:focus {
     margin: 30px 0px;
 }
 
-.card{
+.card {
     width: 300px;
     height: 450px;
     background-color: var(--primary-bg-card-color);
     border-radius: 30px;
 }
 
-.card1{
+.card1 {
     width: 100%;
     height: 100%;
     background-color: var(--primary-bg-card-color);
@@ -473,12 +445,12 @@ input:focus {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    
+
 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.433);
 }
 
-.card2{
+.card2 {
     width: 100%;
     height: 450px;
     background-color: var(--second-bg-card-color);
@@ -492,19 +464,19 @@ input:focus {
     box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.433);
 }
 
-.h2-card1{
+.h2-card1 {
     font-family: var(--font-InterSemiBold);
     font-size: 40px;
     color: var(--second-title-color);
 }
 
-.h2-card2{
+.h2-card2 {
     font-family: var(--font-InterSemiBold);
     font-size: 40px;
     color: var(--third-title-color);
 }
 
-.p-card{
+.p-card {
     width: 85%;
     text-align: center;
     margin-top: 20px;
@@ -512,58 +484,4 @@ input:focus {
     font-size: 16px;
     color: var(--second-text-color);
     line-height: 150%;
-}
-
-/* Footer */
-
-footer{
-    width: 100%;
-    height: 40px;
-    background-color: var(--header-bg-color);
-}
-
-#footer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-
-    padding: 0px 45px;
-}
-
-.h3-footer{
-    font-family: var(--font-InterMedium);
-    font-size: 14px;
-    color: var(--primary-text-color);
-}
-
-.p-footer{
-    font-family: var(--font-InterRegular);
-    font-size: 12px;
-    color: var(--primary-text-color);
-    cursor: pointer;
-}
-.p-footer:hover{
-    color: var(--second-title-color);
-    transition: 0.4s;
-}
-
-.iconHeader:hover{
-    padding: 4px;
-    border-radius: 7px;
-    scale: 1.2;
-    transition: 0.4s;
-}
-
-#link-logo-header:hover{
-    background-color: transparent;
-}
-
-.nav-link{
-    padding: 0px;
-}
-
-.a-footer:hover{
-    background-color: transparent;
 }
