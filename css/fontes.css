@@ -15,6 +15,10 @@
     font-size: clamp(64px, 9vw, 99px);
 }
 
+.titulo-beneficios{
+    font-size: clamp(54px, 9vw, 99px);
+}
+
 .fonte-conecta{
     font-size: clamp(70px, 8vw, 96px);
 }
