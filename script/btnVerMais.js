@@ -9,8 +9,9 @@ function mostrarMaisNoticias() {
         div.classList.add("card-horizontal");
 
         div.innerHTML = `
-            <img src="../assets/sectionQuemSomos/photoSecundaria.png" alt="Notícia ${contador}" height="75%">
-            <h4 class="h3-news card-title">Título da Notícia ${contador}</h4>
+            <img src="../assets/sectionQuemSomos/photoSecundaria.png" alt="Notícia ${contador}" height="
+            70%">
+            <h4 class="subtitulo-pequeno mb-0">Título da Notícia ${contador}</h4>
         `;
 
         divNoticias.appendChild(div);
@@ -25,7 +26,7 @@ window.addEventListener("scroll", () => {
 
     const fimDaPagina =
         window.innerHeight + window.scrollY
-        >= document.body.offsetHeight - 500;
+        >= document.body.offsetHeight - 700;
 
     if (fimDaPagina && contador <= 20) {
         mostrarMaisNoticias();
