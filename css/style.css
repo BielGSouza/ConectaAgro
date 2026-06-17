@@ -435,12 +435,13 @@ body {
 
     }
 }
-
-@media (max-width: 1200px) and (min-width: 577px) {
+@media (max-width: 768px) {
     #quem-somos {
         display: block;
     }
+}
 
+@media (max-width: 1200px) and (min-width: 577px) {
     #dad-card {
         display: grid;
         grid-template-columns: 2fr 2fr;
