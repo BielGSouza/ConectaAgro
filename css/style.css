@@ -215,9 +215,8 @@ body {
 
 #nosso-proposito {
     background-color: var(--second-bg-color);
-    height: 582px;
     width: 100%;
-    padding: 20px;
+    padding: 80px 20px;
 
     display: flex;
     align-items: center;
@@ -266,6 +265,55 @@ body {
     text-align: center;
 }
 
+/* Section Público Alvo */
+
+#txt-publico::after{
+    content: "Publico";
+    position: absolute;
+    right: 16px;
+    z-index: -1;
+    color: transparent;
+    font-size: clamp(64px, 9vw, 99px);
+    text-align: center;
+
+    -webkit-text-stroke: 2px var(--third-title-color);
+    font-style: italic;
+    white-space: nowrap;
+}
+
+#txt-alvo::after{
+    content: "Alvo";
+    position: absolute;
+    right: 16px;
+    z-index: -1;
+    color: transparent;
+    font-size: clamp(64px, 9vw, 99px);
+    text-align: center;
+
+    -webkit-text-stroke: 2px var(--third-title-color);
+    font-style: italic;
+    white-space: nowrap;
+}
+
+#title-publico-alvo, #div-p-publico-alvo{
+    padding: 20px;
+}
+
+#publico-alvo {
+    text-align: end;
+}
+
+#imgs-publico-alvo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Section Benefícios */
+
+
+
 @media(max-width: 576px) {
 
     /* Section Inicial  */
@@ -297,77 +345,6 @@ body {
     #quem-somos {
         display: block;
     }
-}
-
-/* Section Nosso Propósito */
-
-/* #nosso-proposito {
-    background-color: var(--second-bg-color);
-    height: 582px;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    clip-path: ellipse(115% 100% at 50% 0%);
-} */
-
-/* Section Público Alvo */
-
-#publico-alvo {
-    width: 100%;
-    height: auto;
-
-    padding: 20px 110px;
-    text-align: end;
-}
-
-#title-publico-alvo {
-    display: flex;
-    justify-content: end;
-}
-
-#title-publico-alvo-h2 {
-    font-family: var(--font-InterThinItalic);
-    font-size: 99px;
-    color: var(--third-title-color);
-    font-weight: lighter;
-    text-transform: uppercase;
-
-    margin-right: -408px;
-}
-
-#title-publico-alvo-h {
-    font-family: var(--font-InterMediumItalic);
-    font-size: 99px;
-    color: var(--third-title-color);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-#div-p-publico-alvo {
-    display: flex;
-    justify-content: end;
-    margin-top: 30px;
-}
-
-#p-publico-alvo {
-    width: 790px;
-    font-family: var(--font-InterRegular);
-    font-size: 16px;
-
-    margin-bottom: 119px;
-}
-
-#imgs-publico-alvo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 378px;
-    margin: 30px 0px;
 }
 
 /* Section Benefícios */
