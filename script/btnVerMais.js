@@ -53,8 +53,9 @@ function verMais() {
         div.classList.add("card-horizontal");
 
         div.innerHTML = `
-            <img src="../assets/sectionQuemSomos/photoSecundaria.png" alt="Notícia ${contador}" height="75%">
-            <h4 class="h3-news card-title">Título da Notícia ${contador}</h4>
+            <img src="../assets/sectionQuemSomos/photoSecundaria.png" alt="Notícia ${contador}" height="
+            70%">
+            <h4 class="subtitulo-pequeno mb-0">Título da Notícia ${contador}</h4>
         `;
 
         divNoticias.appendChild(div);
