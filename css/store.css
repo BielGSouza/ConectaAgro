@@ -1,26 +1,5 @@
 @charset "UTF-8";
 
-.h1-store{
-    font-size: 96px;
-    font-family: var(--font-InterBold);
-    text-shadow: 1px 1px 2px black;
-    color: var(--second-title-color);
-}
-
-.h2-store{
-    font-size: 64px;
-    font-family: var(--font-InterBold);
-    color: var(--primary-title-color);
-    text-shadow: 1px 1px 2px black;
-}
-
-.h3-store{
-    font-size: 32px;
-    font-family: var(--font-InterBold);
-    color: var(--second-text-color);
-    text-shadow: 1px 1px 2px black;
-}
-
 .p-store{
     font-size: 24px;
     color: var(--second-text-color);
@@ -30,17 +9,18 @@
 #apresentacao{
     width: auto;
     height: auto;
-
 }
 
 #son-apresentacao{
     width: 100%;
-    height: 100%;
+    height: 50%;
     background-color: var(--second-bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 112px 0px;
+
+    background-image: url(../assets/banners/banner_agricola_equipamentos.jpg);
+    background-size: cover;
 }
 
 #div-second-line-title{
