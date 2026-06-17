@@ -382,6 +382,15 @@ body {
     box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.433);
 }
 
+.titulo-card{
+    color: var(--second-title-color);
+    font-weight: bold;
+}
+
+.paragrafo-card{
+    color: var(--second-text-color);
+}
+
 @media(max-width: 576px) {
 
     /* Section Inicial  */
