@@ -150,53 +150,86 @@
     </header>
     <main>
         <section id="apresentacao">
-            <div id="son-apresentacao">
-                <img src="../assets/banners/banner_agricola_insumos.jpg" alt="" width="100%">
+            <!-- <div id="son-apresentacao">
+                <img src="../assets/banners/banner_agricola_insumos(1).jpg" alt="" width="100%">
+                <img src="../assets/banners/banner_agricola_equipamentos(1).jpg" width="100%" alt="">
+            </div> -->
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../assets/banners/banner_agricola_equipamentos(1).jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/banners/banner_agricola_insumos(1).jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </section>
 
         <section id="card">
             <div class="card-store" id="card-store-one">
-                <img class="img-card" src="../assets/sectionStore/photo-1573561368183-fd88bdb4503d 1.png" alt="">
+                <img class="img-card" src="../assets/sectionStore/photo-1573561368183-fd88bdb4503d 1.png" alt="" height="100%">
                 <div class="text-card">
-                    <p>FERRAMENTAS</p>
+                    <p class="paragrafo mb-0">FERRAMENTAS</p>
                     <button class="btn-card">
                         <img src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg" alt="">
                         CONFIRA
                     </button>
                 </div>
             </div>
+
             <div class="card-store" id="card-store-two">
-                <img class="img-card" src="../assets/sectionStore/photo-1685335686020-e0b487f7f426 1.png" alt="">
+                <img class="img-card" src="../assets/sectionStore/photo-1685335686020-e0b487f7f426 1.png" alt="" height="100%">
                 <div class="text-card">
-                    <p>MAQUINAS</p>
+                    <p class="paragrafo mb-0">MAQUINAS</p>
                     <button class="btn-card">
                         <img src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg" alt="">
                         CONFIRA
                     </button>
                 </div>
             </div>
+
             <div class="card-store" id="card-store-three">
                 <img class="img-card" src="../assets/sectionStore/premium_photo-1661964196891-3d3f378a97b2 1.png"
-                    alt="">
+                    alt="" height="100%">
                 <div class="text-card">
-                    <p>INSUMOS</p>
+                    <p class="paragrafo mb-0">INSUMOS</p>
                     <button class="btn-card">
                         <img src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg" alt="">
-                        CONFIRA
+                        <p class="paragrafo mb-0">CONFIRA</p>
                     </button>
                 </div>
             </div>
         </section>
 
         <section id="melhores-ofertas">
-            <p class="p-store" style="z-index: 1;">Melhores Ofertas</p>
+            <p class="subtitulo mb-0 text-white" style="z-index: 1;">Melhores Ofertas</p>
             <div id="linhas-produtos" style="z-index: 1;">
                 <img id="btn-direita" class="setas-linha-produto"
                     src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg" alt=""
                     onclick="mover('direita')">
                 <div id="tela-rolavel-produtos">
-                    <div class="card-produto"></div>
+                    <div class="card-produto">
+                        <img src="../assets/banners/enxada.jpg" alt="">
+                        <p class="paragrafo mb-0 text-center">Enxada preta e afiada</p>
+                        <p class="pagrafo mb-0 fw-medium">R$ 75,90</p>
+                    </div>
                     <div class="card-produto"></div>
                     <div class="card-produto"></div>
                     <div class="card-produto"></div>
@@ -218,19 +251,19 @@
             <p class="p-store" id="p-two">Produtos</p>
             <div id="dad-lista-de-produtos">
                 <div id="lista-de-produtos">
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
-                    <div class="card-produtos"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
+                    <div class="card-produto card-main"></div>
                 </div>
             </div>
-            <p id="p-ver-todos">Ver Todos</p>
+            <p id="p-ver-todos" class="mb-0 paragrafo">Ver Todos</p>
             <div class="arte">Lugar para arte de ecommerce</div>
         </section>
 
@@ -336,7 +369,10 @@
         </div>
     </footer>
 
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
     <script src="../script/scroll.js"></script>
     <script src="../script/footer.js"></script>
     <script src="../script/menuHamburguer.js"></script>
