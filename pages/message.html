@@ -5,95 +5,299 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensagens - ConectaAgro</title>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css//message.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/fontes.css">
+    <link rel="stylesheet" href="../css/root.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
-        <div id="header">
-            <a href="../index.html" id="link-logo-header">
-                <img src="../assets/header/logo.png" alt="Logo da ConectaAgro">
-            </a>
-            <input type="text" id="input-Pesquisar-Header" placeholder="Pesquisar">
-            <nav>
-                <div class="linha-vertical"></div>
-                <div id="nav-itens">
-                    <a href="../index.html" class="nav-link">
-                        <img class="iconHeader" src="../assets/header/icons/home.svg" alt="icone de home">
-                    </a>
-                    <a href="./news.html" class="nav-link">
-                        <img class="iconHeader" src="../assets/header/icons/news.svg" alt="icone de notícias">
-                    </a>
-                    <a href="./store.html" class="nav-link">
-                        <img class="iconHeader" src="../assets/header/icons/store.svg" alt="icone de loja">
-                    </a>
-                    <a href="./message.html" class="nav-link">
-                        <img class="iconHeader" src="../assets/header/icons/message.svg" alt="icone de mensagem"
-                            style="background-color: rgba(128, 128, 128, 0.3); border-radius: 7px; scale: 1.2;">
-                    </a>
-                    <a href="./sac.html" class="nav-link">
-                        <img class="iconHeader" src="../assets/header/icons/support.svg" alt="icone de suporte">
-                    </a>
+        <div class="d-flex justify-content-between header align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <img src="../assets/header/logo.png" alt="logo da CONECTA AGRO">
+                <div class="d-flex gap-1">
+                    <p class="mb-0 Exo-2 text-uppercase fw-bold c-367588">conecta</p>
+                    <p class="mb-0 Exo-2 text-uppercase fw-bold c-2F5D50">agro</p>
                 </div>
-                <div class="linha-vertical"></div>
+            </div>
+            <!-- Icone do Menu Hamburguer, ele so aparece quando a largura da tela for menor que 768px -->
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                id="icone-menu">
+                <path d="M18.3333 28.3337H31.6666M8.33325 20.0003H31.6666M18.3333 11.667H31.6666" stroke="#294E44"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <nav>
+                <a href="../index.html" class="a-header">
+                    <div class="item-nav">
+                        <svg width="25" height="25" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.5625 21.1875H9.46875V14.6771H15.1979V21.1875H19.1042V11.0312L12.3333 5.95312L5.5625 11.0312V21.1875ZM4 22.75V10.25L12.3333 4L20.6667 10.25V22.75H13.6354V16.2396H11.0312V22.75H4Z"
+                                fill="#263238" />
+                        </svg>
+
+                        <span class="label-nav">
+                            Apresentação
+                        </span>
+                    </div>
+                </a>
+                <a href="./news.html" class="a-header">
+                    <div class="item-nav">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.6875 21.875C4.27083 21.875 3.90625 21.7188 3.59375 21.4062C3.28125 21.0938 3.125 20.7292 3.125 20.3125V4.6875C3.125 4.27083 3.28125 3.90625 3.59375 3.59375C3.90625 3.28125 4.27083 3.125 4.6875 3.125H16.7188L21.875 8.28125V20.3125C21.875 20.7292 21.7188 21.0938 21.4062 21.4062C21.0938 21.7188 20.7292 21.875 20.3125 21.875H4.6875ZM4.6875 20.3125H20.3125V9.15182H15.8594V4.6875H4.6875V20.3125ZM7.26562 17.4219H17.7344V15.8594H7.26562V17.4219ZM7.26562 9.14062H12.5V7.57812H7.26562V9.14062ZM7.26562 13.2812H17.7344V11.7188H7.26562V13.2812Z"
+                                fill="#263238" />
+                        </svg>
+                        <span class="label-nav">
+                            Notícias
+                        </span>
+                    </div>
+                </a>
+                <a href="./store.html" class="a-header">
+                    <div class="item-nav">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.16671 5.72917V4.16667H20.8855V5.72917H4.16671ZM4.29692 20.8333V14.1146H3.02087V12.5521L4.16671 7.29167H20.8594L22.0052 12.5521V14.1146H20.7292V20.8333H19.1667V14.1146H14.2448V20.8333H4.29692ZM5.85942 19.2708H12.6823V14.1146H5.85942V19.2708ZM4.55733 12.5521H20.4688L19.6615 8.85417H5.36462L4.55733 12.5521Z"
+                                fill="#263238" />
+                        </svg>
+                        <span class="label-nav">
+                            Loja
+                        </span>
+                    </div>
+                </a>
+                <a href="./message.html" class="a-header">
+                    <div class="item-nav">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.125 20.8333V4.16667L22.9167 12.5L3.125 20.8333ZM4.6875 18.4115L18.8542 12.5L4.6875 6.51042V10.8854L10.9896 12.5L4.6875 14.0625V18.4115Z"
+                                fill="#263238" />
+                        </svg>
+                        <span class="label-nav">
+                            Mensagem
+                        </span>
+                    </div>
+                </a>
+                <a href="./sac.html" class="a-header">
+                    <div class="item-nav">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.4584 21.875V20.3125H20.3125V12.3958C20.3125 10.2484 19.5546 8.42691 18.0386 6.93125C16.5226 5.43542 14.6764 4.6875 12.5 4.6875C10.3237 4.6875 8.47747 5.43542 6.9615 6.93125C5.44553 8.42691 4.68754 10.2484 4.68754 12.3958V18.75H4.16671C3.59379 18.75 3.10334 18.546 2.69535 18.138C2.28737 17.73 2.08337 17.2396 2.08337 16.6667V14.5833C2.08337 14.2188 2.17452 13.8759 2.35681 13.5547C2.5391 13.2335 2.79518 12.9774 3.12504 12.7865L3.20317 11.4062C3.34205 10.2257 3.68494 9.13194 4.23181 8.125C4.77869 7.11806 5.46445 6.24132 6.2891 5.49479C7.11376 4.74826 8.05994 4.16667 9.12765 3.75C10.1954 3.33333 11.3195 3.125 12.5 3.125C13.6806 3.125 14.8004 3.33333 15.8594 3.75C16.9184 4.16667 17.8646 4.74392 18.698 5.48177C19.5313 6.21962 20.2171 7.09201 20.7552 8.09896C21.2934 9.1059 21.6407 10.1997 21.7969 11.3802L21.875 12.7344C22.2049 12.8906 22.461 13.125 22.6433 13.4375C22.8256 13.75 22.9167 14.0799 22.9167 14.4271V16.8229C22.9167 17.1701 22.8256 17.5 22.6433 17.8125C22.461 18.125 22.2049 18.3594 21.875 18.5156V20.3125C21.875 20.7422 21.7221 21.11 21.4162 21.4159C21.1101 21.722 20.7422 21.875 20.3125 21.875H11.4584ZM8.81515 14.0969C8.66758 13.9464 8.59379 13.7597 8.59379 13.537C8.59379 13.3144 8.66914 13.1293 8.81983 12.9818C8.97035 12.8342 9.15699 12.7604 9.37973 12.7604C9.6023 12.7604 9.78737 12.8358 9.93494 12.9865C10.0825 13.137 10.1563 13.3236 10.1563 13.5464C10.1563 13.7689 10.0809 13.954 9.93025 14.1016C9.77973 14.2491 9.5931 14.3229 9.37035 14.3229C9.14778 14.3229 8.96271 14.2476 8.81515 14.0969ZM15.0651 14.0969C14.9176 13.9464 14.8438 13.7597 14.8438 13.537C14.8438 13.3144 14.9191 13.1293 15.0698 12.9818C15.2204 12.8342 15.407 12.7604 15.6297 12.7604C15.8523 12.7604 16.0374 12.8358 16.1849 12.9865C16.3325 13.137 16.4063 13.3236 16.4063 13.5464C16.4063 13.7689 16.3309 13.954 16.1803 14.1016C16.0297 14.2491 15.8431 14.3229 15.6204 14.3229C15.3978 14.3229 15.2127 14.2476 15.0651 14.0969ZM6.27608 12.9688C6.15455 11.1285 6.71011 9.54861 7.94275 8.22917C9.17539 6.90972 10.7118 6.25 12.5521 6.25C14.0625 6.25 15.3733 6.74913 16.4844 7.7474C17.5955 8.74566 18.2726 9.99132 18.5157 11.4844C16.9705 11.467 15.5599 11.033 14.2839 10.1823C13.0079 9.3316 12.0202 8.21181 11.3209 6.82292C11.048 8.21181 10.4645 9.44878 9.57035 10.5339C8.67626 11.6189 7.57817 12.4306 6.27608 12.9688Z"
+                                fill="#263238" />
+                        </svg>
+                        <span class="label-nav">
+                            Fale Conosco
+                        </span>
+                    </div>
+                </a>
             </nav>
+        </div>
+
+        <div id="menuHamburguer" class="menuHamburguer">
+            <a href="../index.html" class="a-header">
+                <div class="item-menu-hamburguer">
+                    <svg width="25" height="25" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.5625 21.1875H9.46875V14.6771H15.1979V21.1875H19.1042V11.0312L12.3333 5.95312L5.5625 11.0312V21.1875ZM4 22.75V10.25L12.3333 4L20.6667 10.25V22.75H13.6354V16.2396H11.0312V22.75H4Z"
+                            fill="#263238" />
+                    </svg>
+                    <p class="mb-0">Apresentação</p>
+                </div>
+            </a>
+            <a href="./news.html" class="a-header">
+                <div class="item-menu-hamburguer">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.6875 21.875C4.27083 21.875 3.90625 21.7188 3.59375 21.4062C3.28125 21.0938 3.125 20.7292 3.125 20.3125V4.6875C3.125 4.27083 3.28125 3.90625 3.59375 3.59375C3.90625 3.28125 4.27083 3.125 4.6875 3.125H16.7188L21.875 8.28125V20.3125C21.875 20.7292 21.7188 21.0938 21.4062 21.4062C21.0938 21.7188 20.7292 21.875 20.3125 21.875H4.6875ZM4.6875 20.3125H20.3125V9.15182H15.8594V4.6875H4.6875V20.3125ZM7.26562 17.4219H17.7344V15.8594H7.26562V17.4219ZM7.26562 9.14062H12.5V7.57812H7.26562V9.14062ZM7.26562 13.2812H17.7344V11.7188H7.26562V13.2812Z"
+                            fill="#263238" />
+                    </svg>
+                    <p class="mb-0">Notícias</p>
+                </div>
+            </a>
+            <a href="./store.html" class="a-header">
+                <div class="item-menu-hamburguer">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.16671 5.72917V4.16667H20.8855V5.72917H4.16671ZM4.29692 20.8333V14.1146H3.02087V12.5521L4.16671 7.29167H20.8594L22.0052 12.5521V14.1146H20.7292V20.8333H19.1667V14.1146H14.2448V20.8333H4.29692ZM5.85942 19.2708H12.6823V14.1146H5.85942V19.2708ZM4.55733 12.5521H20.4688L19.6615 8.85417H5.36462L4.55733 12.5521Z"
+                            fill="#263238" />
+                    </svg>
+                    <p class="mb-0">Loja</p>
+                </div>
+            </a>
+            <a href="./message.html" class="a-header">
+                <div class="item-menu-hamburguer">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.125 20.8333V4.16667L22.9167 12.5L3.125 20.8333ZM4.6875 18.4115L18.8542 12.5L4.6875 6.51042V10.8854L10.9896 12.5L4.6875 14.0625V18.4115Z"
+                            fill="#263238" />
+                    </svg>
+                    <p class="mb-0">Mensagem</p>
+                </div>
+            </a>
+            <a href="./sac.html" class="a-header">
+                <div class="item-menu-hamburguer">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.4584 21.875V20.3125H20.3125V12.3958C20.3125 10.2484 19.5546 8.42691 18.0386 6.93125C16.5226 5.43542 14.6764 4.6875 12.5 4.6875C10.3237 4.6875 8.47747 5.43542 6.9615 6.93125C5.44553 8.42691 4.68754 10.2484 4.68754 12.3958V18.75H4.16671C3.59379 18.75 3.10334 18.546 2.69535 18.138C2.28737 17.73 2.08337 17.2396 2.08337 16.6667V14.5833C2.08337 14.2188 2.17452 13.8759 2.35681 13.5547C2.5391 13.2335 2.79518 12.9774 3.12504 12.7865L3.20317 11.4062C3.34205 10.2257 3.68494 9.13194 4.23181 8.125C4.77869 7.11806 5.46445 6.24132 6.2891 5.49479C7.11376 4.74826 8.05994 4.16667 9.12765 3.75C10.1954 3.33333 11.3195 3.125 12.5 3.125C13.6806 3.125 14.8004 3.33333 15.8594 3.75C16.9184 4.16667 17.8646 4.74392 18.698 5.48177C19.5313 6.21962 20.2171 7.09201 20.7552 8.09896C21.2934 9.1059 21.6407 10.1997 21.7969 11.3802L21.875 12.7344C22.2049 12.8906 22.461 13.125 22.6433 13.4375C22.8256 13.75 22.9167 14.0799 22.9167 14.4271V16.8229C22.9167 17.1701 22.8256 17.5 22.6433 17.8125C22.461 18.125 22.2049 18.3594 21.875 18.5156V20.3125C21.875 20.7422 21.7221 21.11 21.4162 21.4159C21.1101 21.722 20.7422 21.875 20.3125 21.875H11.4584ZM8.81515 14.0969C8.66758 13.9464 8.59379 13.7597 8.59379 13.537C8.59379 13.3144 8.66914 13.1293 8.81983 12.9818C8.97035 12.8342 9.15699 12.7604 9.37973 12.7604C9.6023 12.7604 9.78737 12.8358 9.93494 12.9865C10.0825 13.137 10.1563 13.3236 10.1563 13.5464C10.1563 13.7689 10.0809 13.954 9.93025 14.1016C9.77973 14.2491 9.5931 14.3229 9.37035 14.3229C9.14778 14.3229 8.96271 14.2476 8.81515 14.0969ZM15.0651 14.0969C14.9176 13.9464 14.8438 13.7597 14.8438 13.537C14.8438 13.3144 14.9191 13.1293 15.0698 12.9818C15.2204 12.8342 15.407 12.7604 15.6297 12.7604C15.8523 12.7604 16.0374 12.8358 16.1849 12.9865C16.3325 13.137 16.4063 13.3236 16.4063 13.5464C16.4063 13.7689 16.3309 13.954 16.1803 14.1016C16.0297 14.2491 15.8431 14.3229 15.6204 14.3229C15.3978 14.3229 15.2127 14.2476 15.0651 14.0969ZM6.27608 12.9688C6.15455 11.1285 6.71011 9.54861 7.94275 8.22917C9.17539 6.90972 10.7118 6.25 12.5521 6.25C14.0625 6.25 15.3733 6.74913 16.4844 7.7474C17.5955 8.74566 18.2726 9.99132 18.5157 11.4844C16.9705 11.467 15.5599 11.033 14.2839 10.1823C13.0079 9.3316 12.0202 8.21181 11.3209 6.82292C11.048 8.21181 10.4645 9.44878 9.57035 10.5339C8.67626 11.6189 7.57817 12.4306 6.27608 12.9688Z"
+                            fill="#263238" />
+                    </svg>
+                    <p class="mb-0">Fale Conosco</p>
+                </div>
+            </a>
         </div>
     </header>
     <main id="main-message">
-        <section id="contatos"
-            style="background-image: url(../assets/vetores/vetoresLinhas.svg); background-attachment: fixed; background-size: cover;">
+        <section id="contatos">
             <div id="contatos-header">
                 <p id="p-header-contato">nome_usuario </p>
                 <input type="text" id="input-header-contatos" placeholder="Pesquisar contatos...">
             </div>
 
             <div id="contatos-body">
-                <div class="card-contato ativo">
-                    <div class="foto-contato"></div>
-                    <p>Neymar</p>
+                <div class="card-contato" onclick="abrirModal('Rolnaldinho Gaucho')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Ronaldinho Gaucho</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
                 </div>
-                <div class="card-contato">
-                    <div class="foto-contato"></div>
-                    <p>Pedro</p>
+                <div class="card-contato" onclick="abrirModal('Marcão')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Marcão</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
                 </div>
-                <div class="card-contato">
-                    <div class="foto-contato"></div>
-                    <p>Hariel</p>
+                <div class="card-contato" onclick="abrirModal('Edmilson')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Edmilson</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
                 </div>
-                <div class="card-contato">
-                    <div class="foto-contato"></div>
-                    <p>Gabriel</p>
+                <div class="card-contato" onclick="abrirModal('Roque Junior')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Roque Junior</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
                 </div>
-                <div class="card-contato">
-                    <div class="foto-contato"></div>
-                    <p>Mike</p>
+                <div class="card-contato" onclick="abrirModal('Lucio')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Lucio</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
                 </div>
-                <div class="card-contato">
-                    <div class="foto-contato"></div>
-                    <p>Felipe</p>
+                <div class="card-contato" onclick="abrirModal('Roberto Carlos')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Roberto Carlos</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
                 </div>
-                <div class="card-contato">
-                    <div class="foto-contato"></div>
-                    <p>Bruno</p>
+                <div class="card-contato" onclick="abrirModal('Cafu')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Cafu</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
                 </div>
-                <div class="card-contato">
-                    <div class="foto-contato"></div>
-                    <p>Willian</p>
+                <div class="card-contato" onclick="abrirModal('Ronaldo')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Ronaldo</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
+                </div>
+                <div class="card-contato" onclick="abrirModal('Rilvaldo')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Rilvaldo</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
+                </div>
+                <div class="card-contato" onclick="abrirModal('Gilberto Silva')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Gilberto Silva</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
+                </div>
+                <div class="card-contato" onclick="abrirModal('Klebérson')">
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="foto-contato"></div>
+                        <p class="mb-0 paragrafo">Klebérson</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#2F5D50">
+                        <path
+                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                    </svg>
                 </div>
             </div>
         </section>
 
         <section id="mensagens">
+            <div id="div-header-mensagem-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2F5D50" onclick="closeModal()"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+                <p class="mb-0" id="p-header-mensagem"></p>
+            </div>
             <div id="div-body-mensagem">
                 <div class="div-mensagem-recebida">
                     <div class="mensagem-recebida">
-                        <p class="p-mensagem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti incidunt voluptates at numquam, laboriosam eius obcaecati autem explicabo perspiciatis doloremque adipisci, eaquemolestiae soluta velit eum nisi illo totam aut.</p>
+                        <p class="p-mensagem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti incidunt
+                            voluptates at numquam, laboriosam eius obcaecati autem explicabo perspiciatis doloremque
+                            adipisci, eaquemolestiae soluta velit eum nisi illo totam aut.</p>
                     </div>
                 </div>
                 <div class="div-mensagem-enviada">
                     <div class="message-enviada">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci perferendis, veritatis rem iusto deleniti, accusantium enim accusamus iste beatae ad consectetur minima ipsum. Maxime nemo veritatis autem, illum perferendis aspernatur?</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci perferendis, veritatis rem
+                            iusto deleniti, accusantium enim accusamus iste beatae ad consectetur minima ipsum. Maxime
+                            nemo veritatis autem, illum perferendis aspernatur?</p>
                     </div>
                 </div>
             </div>
@@ -113,7 +317,36 @@
         </section>
     </main>
 
+    <dialog id="tela-mensagem-mobile">
+        <section id="section-mensagem-modal">
+            <div id="div-header-mensagem-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2F5D50" onclick="closeModal()"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+                <p class="mb-0" id="p-header-modal"></p>
+            </div>
+            <div id="div-body-mensagem-modal">
+            </div>
+            <div id="div-head-mensagem-modal">
+                <div id="input">
+                    <div id="input-message">
+                        <textarea name="" id="text-area-message-modal" placeholder="Digite sua mensagem..."></textarea>
+                        <img id="icon-image"
+                            src="../assets/sectionMessage/image_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" alt="">
+                        <button id="btn-send-message-modal" onclick="enviarMensagemModal()">
+                            <img id="icon-send"
+                                src="../assets/sectionMessage/send_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script src="../script/modalMensagem.js"></script>
     <script src="../script/message.js"></script>
+    <script src="../script/menuHamburguer.js"></script>
 </body>
 
 </html>

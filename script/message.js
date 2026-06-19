@@ -54,3 +54,23 @@ function enviarMensagem() {
     textArea.style.height = 'auto';
     divBodyMensagem.scrollTop = divBodyMensagem.scrollHeight;
 }
+
+function enviarMensagemModal() {
+    let divBodyMensagem = document.getElementById('div-body-mensagem-modal')
+    let textArea = document.getElementById('text-area-message-modal')
+    let valorTextArea = textArea.value
+
+    let div = document.createElement('div')
+    div.classList.add("div-mensagem-enviada")
+
+    div.innerHTML = `
+        <div class="message-enviada">
+            <p class="p-mensagem">${valorTextArea}</p>
+        </div>
+    `
+    divBodyMensagem.appendChild(div);
+
+    textArea.value = ""
+    textArea.style.height = 'auto';
+    divBodyMensagem.scrollTop = divBodyMensagem.scrollHeight;
+}
