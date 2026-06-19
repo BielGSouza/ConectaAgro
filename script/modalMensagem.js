@@ -60,8 +60,6 @@ function renderizarMensagens() {
 
     container.innerHTML = "";
 
-    if()
-
     //aqui ele passa um por um para sabver q e add as msg
     conversas[contatoAtual].forEach(msg => {
 
