@@ -6,22 +6,35 @@ function enviarFormulario() {
     let assunto = document.getElementById('assunto')
     let mensagem = document.getElementById('mensagem')
 
+    let quantidadeLetrasNome = QuantidadeDeLetras(nome.value)
+    let quantidadeLetrasSobrenome = QuantidadeDeLetras(sobrenome.value)
+
     /* Verifica se os campos estão preenchidos */
     if (!nome.value || !sobrenome.value || !email.value || !telefone.value || !assunto.value || !mensagem.value) {
-        alert("Preencha todos os campos para enviar o formulário!")
+        modalAviso("Preencha todos os campos para enviar o formulário!", "erro")
     } else {
-        alert("Pedido enviado ao suporte!")
-        /* Faz os campos serem limpos */
-        nome.value = ""
-        sobrenome.value = ""
-        email.value = ""
-        telefone.value = ""
-        assunto.value = ""
-        mensagem.value = ""
-    }
+        //Verifica quantas letras tem, no minimo 2
+        if (quantidadeLetrasNome < 2 && quantidadeLetrasSobrenome < 2) {
+            modalAviso("Por favor preencha seu nome e/ou sobrenome corretamente, minimo de 2 letras", "erro")
+        } else {
+            if (mensagem.value.length > 500) {
+                modalAviso("Há mais caracteres que o permetido no campo Mensagem!", "erro")
+            } else {
+                if (!validarEmail(email.value)) {
+                    modalAviso("Email inválido", "erro")
+                } else {
 
-    if (mensagem.value.length > 300) {
-        alert("Há mais caracteres que o permetido no campo Mensagem!")
+                    modalAviso("Pedido enviado ao suporte!", "sucesso")
+                    /* Faz os campos serem limpos */
+                    nome.value = ""
+                    sobrenome.value = ""
+                    email.value = ""
+                    telefone.value = ""
+                    assunto.value = ""
+                    mensagem.value = ""
+                }
+            }
+        }
     }
 }
 
@@ -44,14 +57,56 @@ inputTelefone.addEventListener('input', () => {
 
 /* Verifica se o input mensagem tem mais de 300 caracteres */
 
-const inputMensagem = document.getElementById("area-mensagem")
+const inputMensagem = document.getElementById("mensagem")
 const paragrafo = document.getElementById("p-atencao")
 
 inputMensagem.addEventListener("input", () => {
-    if (inputMensagem.value.length > 300) {
+    if (inputMensagem.value.length > 500) {
         paragrafo.style.color = "red"
     } else {
-        paragrafo.style.color = "black"
+        paragrafo.style.color = "green"
     }
 
 })
+
+function modalAviso(assunto, indice) {
+    const idModalAviso = document.getElementById('modal-aviso');
+
+    idModalAviso.innerHTML = `
+        <div id="linhaColorida"></div>
+        <p id="p-modal-aviso" class="mb-0 paragrafo">${assunto}</p>
+    `
+
+    const linhaColorida = document.getElementById('linhaColorida')
+
+    if (indice == "erro") {
+        linhaColorida.style.backgroundColor = 'red'
+    } else if (indice == "sucesso") {
+        linhaColorida.style.backgroundColor = '#88E788'
+    }
+
+
+
+    idModalAviso.style.display = 'block';
+
+    setTimeout(() => {
+        idModalAviso.style.display = 'none';
+    }, 5000)
+}
+
+// Função para verificar a quantidade de letras
+
+function QuantidadeDeLetras(elemento) {
+    let quantasLetras
+
+    quantasLetras = elemento.replace(/\s/g, "");
+
+    return quantasLetras.length
+}
+
+// Validar email colocado
+
+function validarEmail(email) {
+    const regex = /\S+@\S+\.\S+/;
+    return regex.test(email);
+}

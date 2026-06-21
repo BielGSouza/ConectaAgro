@@ -14,10 +14,15 @@ function abrirModal(nome) {
         conversas[nome] = [];
     }
 
-    renderizarMensagens();
+    if (window.innerWidth <= 768) {
+        document.getElementById('p-header-modal').textContent = nome;
+        //abre o modal quando clica no contato
+        document.getElementById('tela-mensagem-mobile').showModal();
+    } else {
+        document.getElementById('p-header-mensagem').textContent = nome;
+    }
 
-    //abre o modal quando clica no contato
-    document.getElementById('tela-mensagem-mobile').showModal();
+    renderizarMensagens();
 }
 
 function closeModal() {
@@ -92,6 +97,8 @@ function renderizarMensagens() {
     container.scrollTop = container.scrollHeight;
 }
 
-// Mostrar texto caso na haja mensagem
-
-const body_mensagem = document.getElementById('div-body-mensagem-modal')
+function getContainerMensagens() {
+    return window.innerWidth <= 768
+        ? document.getElementById('div-body-mensagem-modal')
+        : document.getElementById('div-body-mensagem');
+}

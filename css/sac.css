@@ -128,3 +128,34 @@ textarea {
     align-items: start;
 }
 }
+
+/* Estilo do Modal de aviso */
+
+#modal-aviso{
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    margin: auto;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: var(--second-bg-color);
+    color: white;
+    border-radius: 0px 0px 15px 15px;
+
+    transform: translateX(-50%);
+    display: none;
+}
+
+#p-modal-aviso{
+    padding: 0px 10px 10px;
+}
+
+#linhaColorida{
+    width: 100%;
+    height: 5px;
+}

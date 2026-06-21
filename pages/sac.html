@@ -198,6 +198,7 @@
                 <label for="mensagem" class="inputs-form">
                     Mensagem:
                     <textarea name="mensagem" id="mensagem" rows="4" style="resize: none;"></textarea>
+                    <p id="p-atencao" class="texto-pequeno">Maximo de 500 caracteres</p>
                 </label>
 
                 <button type="button" id="btn-form" onclick="enviarFormulario()">
@@ -217,7 +218,7 @@
                 </svg>
                 <div class="texto-card-form">
                     <h2 class="mb-0">Contate-nos pelo site</h2>
-                    <p class="paragrafo mb-0">Preencha o campo ao lado e assim que recebermos seu chamado começaremos o
+                    <p class="paragrafo mb-0">Preencha o campo e assim que recebermos seu chamado começaremos o
                         atendimento.</p>
                 </div>
             </div>
@@ -308,6 +309,11 @@
             <p class="p-copy mb-0">PBL Agrotech FIAP ON 2026</p>
         </div>
     </footer>
+
+    <!-- Esse modal abaixo ele é para aparecer na tela em caso de erro ou sucesso de alguma ação -->
+    <div id="modal-aviso">
+        
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">

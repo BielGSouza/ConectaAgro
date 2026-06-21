@@ -115,6 +115,7 @@
     height: auto;
 
     padding: 10px 30px;
+    flex: 1;
     overflow-y: auto;
 }
 
@@ -241,7 +242,7 @@
     flex-direction: column;
 }
 
-#div-header-mensagem-modal {
+#div-header-mensagem-modal, #div-header-mensagem {
     border-bottom: 1px solid var(--second-bg-color);
     display: flex;
     align-items: center;
