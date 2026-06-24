@@ -391,6 +391,20 @@ body {
     color: var(--second-text-color);
 }
 
+#link-video-pitch{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    background-color: var(--second-bg-color);
+    border-radius: 25px;
+    transition: 0.4s;
+}
+#link-video-pitch:hover{
+    background-color: var(--third-bg-color);
+    color: black;
+    transition: 0.4s;
+}
+
 @media(max-width: 576px) {
 
     /* Section Inicial  */
