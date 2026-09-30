@@ -215,14 +215,15 @@
 }
 
 .grid-novidades {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    display: flex;
+    overflow-x: scroll;
     gap: 25px;
     margin-top: 25px;
+    padding: 5px;
 }
 
 .card-novidade {
-    width: 100%;
+    width: 350px;
     background: #2f654f;
     border-radius: 20px;
     overflow: hidden;
