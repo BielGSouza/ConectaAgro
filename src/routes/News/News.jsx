@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import '../../css/fontes.css'
@@ -77,6 +77,10 @@ const News = () => {
       [campoMap[id] || id]: value
     });
   };
+
+  useEffect(() => {
+    document.title = "ConectaAgro - Noticías"
+  }, [])
 
   return (
     <>

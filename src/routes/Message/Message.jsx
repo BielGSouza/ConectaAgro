@@ -142,6 +142,10 @@ const Message = () => {
     }
   };
 
+  useEffect(() => {
+      document.title = "ConectaAgro - Mensagem"
+    }, [])
+
   return (
     <>
       <Header />

@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import '../../css/sac.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Importação do logo
 import Logo from '../../assets/header/logo.png';
@@ -71,6 +71,10 @@ const Sac = () => {
     });
     setCaracteresRestantes(500);
   };
+
+  useEffect(() => {
+      document.title = "ConectaAgro - SAC"
+    }, [])
 
   return (
     <div>

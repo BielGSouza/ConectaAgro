@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import '../../css/store.css';
@@ -129,6 +129,10 @@ const Store = () => {
             }
         });
     };
+
+    useEffect(() => {
+        document.title = "ConectaAgro - Loja"
+      }, [])
 
     return (
         <>
