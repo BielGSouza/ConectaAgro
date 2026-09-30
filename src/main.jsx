@@ -12,19 +12,24 @@ import Sac from './routes/Sac/Sac.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        { path: "/", element: <Home /> },
+        { path: "/noticias", element: <News /> },
+        { path: "/loja", element: <Store /> },
+        { path: "/mensagem", element: <Message /> },
+        { path: "/sac", element: <Sac /> },
+      ]
+    }
+  ],
   {
-    path: "/",
-    element: <App/>,
-    children: [
-      {path: "/", element: <Home/>},
-      {path: "/noticias", element: <News/>},
-      {path: "/loja", element: <Store/>},
-      {path: "/mensagem", element: <Message/>},
-      {path: "/sac", element: <Sac/>},
-    ]
+    basename: "ConectaAgro"
   }
-])
+)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
