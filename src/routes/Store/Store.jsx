@@ -1,38 +1,38 @@
 import React, { useState, useRef } from 'react';
-import Header from "./Header";
-import Footer from "./Footer";
-import '../css/store.css';
-import CarrinhoDeCompras from './CarrinhoDeCompras';
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import '../../css/store.css';
+import CarrinhoDeCompras from '../../components/CarrinhoDeCompras';
 
 // Importações dos banners
-import BannerUm from '../assets/banners/banner_agricola_equipamentos(1).jpg';
-import BannerDois from '../assets/banners/banner_agricola_insumos(1).jpg';
+import BannerUm from '../../assets/banners/banner_agricola_equipamentos(1).jpg';
+import BannerDois from '../../assets/banners/banner_agricola_insumos(1).jpg';
 
 // Importações da seção "card" (3 imagens)
-import Ferramentas from '../assets/sectionStore/photo-1573561368183-fd88bdb4503d 1.png';
-import Maquinas from '../assets/sectionStore/photo-1685335686020-e0b487f7f426 1.png';
-import Insumos from '../assets/sectionStore/premium_photo-1661964196891-3d3f378a97b2 1.png';
+import Ferramentas from '../../assets/sectionStore/photo-1573561368183-fd88bdb4503d 1.png';
+import Maquinas from '../../assets/sectionStore/photo-1685335686020-e0b487f7f426 1.png';
+import Insumos from '../../assets/sectionStore/premium_photo-1661964196891-3d3f378a97b2 1.png';
 
 // Importação do ícone AgroHub (usado nos botões)
-import IconeAgroHub from '../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg';
+import IconeAgroHub from '../../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg';
 
 // Importações das setas do carrossel
-import Seta from '../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg';
+import Seta from '../../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg';
 
 // Importação dos vetores de linhas
-import VetoresLinhas from '../assets/vetores/vetoresLinhas.svg';
+import VetoresLinhas from '../../assets/vetores/vetoresLinhas.svg';
 
 // Importações do sub-rodapé
-import IconeCaixa from '../assets/sectionStore/box_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
-import IconeCartao from '../assets/sectionStore/credit_card_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
+import IconeCaixa from '../../assets/sectionStore/box_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
+import IconeCartao from '../../assets/sectionStore/credit_card_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
 
 // Importações dos produtos
-import Enxada from '../assets/produtos/enxada.jpg';
-import SacoSilagem from '../assets/produtos/saco-de-silagem.jpg';
-import SementeUva from '../assets/produtos/semente-uva.webp';
-import SementeCalendula from '../assets/produtos/semente-calendula.jpg';
-import SementeOnzeHoras from '../assets/produtos/semente-onze-horas.jpg';
-import SementeCapuchinha from '../assets/produtos/semente-capuchinha.jpg';
+import Enxada from '../../assets/produtos/enxada.jpg';
+import SacoSilagem from '../../assets/produtos/saco-de-silagem.jpg';
+import SementeUva from '../../assets/produtos/semente-uva.webp';
+import SementeCalendula from '../../assets/produtos/semente-calendula.jpg';
+import SementeOnzeHoras from '../../assets/produtos/semente-onze-horas.jpg';
+import SementeCapuchinha from '../../assets/produtos/semente-capuchinha.jpg';
 
 const Store = () => {
     // Referências para os carrosséis de produtos

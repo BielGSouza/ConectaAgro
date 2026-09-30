@@ -1,10 +1,10 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import '../css/sac.css';
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import '../../css/sac.css';
 import { useState } from "react";
 
 // Importação do logo
-import Logo from '../assets/header/logo.png';
+import Logo from '../../assets/header/logo.png';
 
 const Sac = () => {
   // Estados para o formulário

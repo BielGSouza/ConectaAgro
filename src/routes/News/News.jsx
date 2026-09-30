@@ -1,34 +1,34 @@
 import React, { useState } from 'react';
-import Header from "./Header";
-import Footer from "./Footer";
-import '../css/fontes.css'
-import '../css/root.css'
-import '../css/news.css'
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import '../../css/fontes.css'
+import '../../css/root.css'
+import '../../css/news.css'
 
 // Imagens da seção "Em Alta"
-import NoticiaMaior from '../assets/pageNews/noticiaMaior.png';
-import FotoTrator from '../assets/pageNews/fotoTrator.png';
-import FotoGraos from '../assets/pageNews/fotoGraos.png';
-import ChinaPanama from '../assets/pageNews/China-e-Panama.jpg';
-import CNA from '../assets/pageNews/CNA.jpg';
+import NoticiaMaior from '../../assets/pageNews/noticiaMaior.png';
+import FotoTrator from '../../assets/pageNews/fotoTrator.png';
+import FotoGraos from '../../assets/pageNews/fotoGraos.png';
+import ChinaPanama from '../../assets/pageNews/China-e-Panama.jpg';
+import CNA from '../../assets/pageNews/CNA.jpg';
 
 // Imagens da seção "Notícias" (fixas)
-import TarcisioAgro from '../assets/pageNews/tarcisio-agro.jpg';
-import ESX2026 from '../assets/pageNews/ESX2026.jpeg';
-import Preco from '../assets/pageNews/preco.jpg';
-import ConexaoMulheres from '../assets/pageNews/conexao-mulheres.jpg';
-import DoisBrasis from '../assets/pageNews/dois-brasis.jpeg';
-import ConexaoAgro from '../assets/pageNews/conexao-agro.jpeg';
-import LiderancaFeminina from '../assets/pageNews/lideranca-feminina.png';
-import SNFZ11 from '../assets/pageNews/SNFZ11.jpg';
-import AgroMelodiaHarmonia from '../assets/pageNews/agro-melodia-harmonia.png';
-import AgroBaiano from '../assets/pageNews/agro-baiano.jpg';
+import TarcisioAgro from '../../assets/pageNews/tarcisio-agro.jpg';
+import ESX2026 from '../../assets/pageNews/ESX2026.jpeg';
+import Preco from '../../assets/pageNews/preco.jpg';
+import ConexaoMulheres from '../../assets/pageNews/conexao-mulheres.jpg';
+import DoisBrasis from '../../assets/pageNews/dois-brasis.jpeg';
+import ConexaoAgro from '../../assets/pageNews/conexao-agro.jpeg';
+import LiderancaFeminina from '../../assets/pageNews/lideranca-feminina.png';
+import SNFZ11 from '../../assets/pageNews/SNFZ11.jpg';
+import AgroMelodiaHarmonia from '../../assets/pageNews/agro-melodia-harmonia.png';
+import AgroBaiano from '../../assets/pageNews/agro-baiano.jpg';
 
 // Imagens da seção "Novidades"
-import IA from '../assets/pageNews/IA.jpg';
-import TratorHibrido from '../assets/pageNews/tratorhibrido.jpg';
-import Robos from '../assets/pageNews/robos.png';
-import Irrigacao from '../assets/pageNews/Irrigacao.png';
+import IA from '../../assets/pageNews/IA.jpg';
+import TratorHibrido from '../../assets/pageNews/tratorhibrido.jpg';
+import Robos from '../../assets/pageNews/robos.png';
+import Irrigacao from '../../assets/pageNews/Irrigacao.png';
 
 const News = () => {
   // Estado para armazenar notícias adicionadas dinamicamente

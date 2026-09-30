@@ -1,21 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header'
-import Apresentacao from './components/Apresentacao'
-import ConversorUnidades from './components/ConversorUnidades'
-import Footer from './components/Footer'
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header />
-      <Apresentacao />
-      <ConversorUnidades />
-      <Footer />
+      <Outlet/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

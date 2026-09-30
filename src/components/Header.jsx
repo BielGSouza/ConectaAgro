@@ -60,7 +60,7 @@ const Header = () => {
               <span className="label-nav">Apresentação</span>
             </div>
           </Link>
-          <Link to="/news" className="a-header">
+          <Link to="/noticias" className="a-header">
             <div className="item-nav">
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -70,7 +70,7 @@ const Header = () => {
               <span className="label-nav">Notícias</span>
             </div>
           </Link>
-          <Link to="/store" className="a-header">
+          <Link to="/loja" className="a-header">
             <div className="item-nav">
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -80,7 +80,7 @@ const Header = () => {
               <span className="label-nav">Loja</span>
             </div>
           </Link>
-          <Link to="/message" className="a-header">
+          <Link to="/mensagem" className="a-header">
             <div className="item-nav">
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -118,7 +118,7 @@ const Header = () => {
             <p className="mb-0">Apresentação</p>
           </div>
         </Link>
-        <Link to="/news" className="a-header" onClick={fecharMenu}>
+        <Link to="/noticias" className="a-header" onClick={fecharMenu}>
           <div className="item-menu-hamburguer">
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -128,7 +128,7 @@ const Header = () => {
             <p className="mb-0">Notícias</p>
           </div>
         </Link>
-        <Link to="/store" className="a-header" onClick={fecharMenu}>
+        <Link to="/loja" className="a-header" onClick={fecharMenu}>
           <div className="item-menu-hamburguer">
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -138,7 +138,7 @@ const Header = () => {
             <p className="mb-0">Loja</p>
           </div>
         </Link>
-        <Link to="/message" className="a-header" onClick={fecharMenu}>
+        <Link to="/mensagem" className="a-header" onClick={fecharMenu}>
           <div className="item-menu-hamburguer">
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
