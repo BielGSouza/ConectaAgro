@@ -1,0 +1,151 @@
+.simulador {
+    background: #f8f8f3;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cabecalho,
+.card {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecalho h1 {
+    font-family: "Exo 2", Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    font-style: italic;
+    color: #286b5b;
+    margin-bottom: 10px;
+}
+
+.cabecalho p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    margin: 0;
+}
+
+.card {
+  background: white;
+  padding: 55px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px 30px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.campo label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.campo input,
+.campo select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #ddd;
+  font-size: 17px;
+  outline: none;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: 2px solid #286354;
+}
+
+.simulador .card > button {
+    display: block;
+    width: 260px;
+    margin: 40px auto 0;
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 40px;
+    background: #286354;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.simulador .card > button:hover {
+    background: #1e4c40;
+}
+
+.resultado {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+.resultado h2 {
+  color: #286354;
+}
+
+.resultadoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.resultadoGrid div {
+  background: #f4f5f1;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.resultadoGrid span,
+.resultadoGrid strong {
+  display: block;
+}
+
+.resultadoGrid span {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.resultadoGrid strong {
+  color: #286354;
+  font-size: 22px;
+}
+
+@media (max-width: 700px) {
+  .campos,
+  .resultadoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecalho h1 {
+    font-size: 36px;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+}
