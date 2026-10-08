@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Header from '../../components/Header'
 import Apresentacao from '../../components/Apresentacao'
-import ConversorUnidades from '../../components/ConversorUnidades'
+import CarrosselFuncionalidades from '../../components/CarrosselFuncionalidades/CarrosselFuncionalidades'
 import Footer from '../../components/Footer'
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       <Header />
       <Apresentacao />
-      <ConversorUnidades />
+      <CarrosselFuncionalidades />
       <Footer />
     </div>
   )
