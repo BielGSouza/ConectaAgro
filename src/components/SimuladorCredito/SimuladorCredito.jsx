@@ -42,9 +42,9 @@ function SimuladorCredito() {
   }
 
   return (
-    <main className="simulador">
+    <div className="simulador">
       <section className="cabecalho">
-        <h1>Simulador de Crédito Rural</h1>
+        <h2>Simulador de Crédito Rural</h2>
         <p>
           Simule as condições do seu financiamento rural de forma rápida
           e simples.
@@ -126,7 +126,7 @@ function SimuladorCredito() {
         )}
 
       </section>
-    </main>
+    </div>
   );
 }
 

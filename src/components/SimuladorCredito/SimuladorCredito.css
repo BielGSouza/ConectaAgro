@@ -20,7 +20,7 @@
     margin-bottom: 30px;
 }
 
-.cabecalho h1 {
+.cabecalho h2 {
     font-family: "Exo 2", Arial, Helvetica, sans-serif;
     font-size: 48px;
     font-weight: 700;
@@ -141,7 +141,7 @@
     grid-template-columns: 1fr;
   }
 
-  .cabecalho h1 {
+  .cabecalho h2 {
     font-size: 36px;
   }
 

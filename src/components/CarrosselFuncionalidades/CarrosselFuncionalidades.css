@@ -1,0 +1,448 @@
+/* =========================================================
+   Carousel de Funcionalidades
+   Usa as variáveis de cor do site (root.css)
+   ========================================================= */
+
+#funcionalidades {
+    background-color: var(--primary-bg-color, #FFFFFF);
+    padding: 70px 5% 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    isolation: isolate;       /* deixa o contorno do título atrás do texto, mas na frente do fundo */
+    overflow-x: clip;
+}
+
+/* ---------- Título (mesmo estilo de "Quem Somos?" e "Beneficios") ---------- */
+#funcionalidades .cf-titulo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+#txt-funcionalidades {
+    position: relative;
+    display: inline-block;
+    color: var(--third-title-color, #263238);
+    font-size: clamp(34px, 7.5vw, 84px);
+}
+
+#txt-funcionalidades::after {
+    content: "Ferramenta";
+    position: absolute;
+    left: 4px;
+    z-index: -1;
+    color: transparent;
+    font-size: clamp(34px, 7.5vw, 84px);
+    -webkit-text-stroke: 2px var(--third-title-color, #263238);
+    font-style: italic;
+    white-space: nowrap;
+}
+
+#funcionalidades .cf-titulo p {
+    max-width: 520px;
+    color: var(--primary-text-color, #263238);
+}
+
+/* ---------- Abas ---------- */
+.cf-abas {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);   /* grade 3 x 2 */
+    gap: 8px;
+    justify-content: center;
+}
+
+.cf-aba {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 30px;
+    border: 1.5px solid var(--second-bg-color, #2F5C4F);
+    background: transparent;
+    color: var(--second-bg-color, #2F5C4F);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.cf-aba:hover,
+.cf-aba.ativa {
+    background-color: var(--second-bg-color, #2F5C4F);
+    color: #F1E9DC;
+}
+
+/* ---------- Palco: seta | janela | seta, e pontos embaixo ---------- */
+.cf-palco {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) 56px;
+    grid-template-areas:
+        "anterior janela proximo"
+        ".        pontos .";
+    column-gap: 16px;
+    row-gap: 22px;
+    align-items: center;
+}
+
+.cf-seta-anterior { grid-area: anterior; }
+.cf-seta-proximo  { grid-area: proximo; }
+.cf-janela        { grid-area: janela; }
+.cf-pontos        { grid-area: pontos; }
+
+.cf-seta {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--second-bg-color, #2F5C4F);
+    color: #F1E9DC;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(38, 50, 56, 0.25);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.cf-seta:hover {
+    background-color: var(--third-title-color, #263238);
+}
+
+.cf-seta:active {
+    transform: scale(0.94);
+}
+
+.cf-seta:focus-visible,
+.cf-aba:focus-visible,
+.cf-ponto:focus-visible {
+    outline: 3px solid var(--second-title-color, #A5D6A7);
+    outline-offset: 3px;
+}
+
+/* ---------- Janela e trilho ---------- */
+.cf-janela {
+    overflow: hidden;
+    border-radius: 30px;
+    border: 1px solid rgba(47, 92, 79, 0.18);
+    background-color: var(--firty-bg-color, #FAFAF7);
+    box-shadow: 0 18px 40px -18px rgba(38, 50, 56, 0.35);
+    touch-action: pan-y;
+    transition: height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cf-trilho {
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cf-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cf-slide.ativo {
+    opacity: 1;
+}
+
+/* ---------- Pontos ---------- */
+.cf-pontos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cf-ponto {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--fourty-bg-color, #D9D9D9);
+    cursor: pointer;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.cf-ponto:hover {
+    background-color: var(--third-bg-color, #A5D6A7);
+}
+
+.cf-ponto.ativo {
+    width: 32px;
+    background-color: var(--second-bg-color, #2F5C4F);
+}
+
+/* Texto só para leitores de tela */
+.cf-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* =========================================================
+   Normalização das ferramentas dentro dos slides
+   (Orçamento e Simulador vieram com um visual próprio;
+   aqui eles ficam iguais ao Conversor, Calculadora e Clima)
+   ========================================================= */
+
+.cf-slide .orcamento-rural,
+.cf-slide .simulador {
+    background: var(--firty-bg-color, #FAFAF7);
+    padding: 60px 5%;
+    gap: 32px;
+    font-family: inherit;
+}
+
+.cf-slide .orcamento-cabecalho,
+.cf-slide .simulador .cabecalho {
+    margin: 0;
+}
+
+.cf-slide .orcamento-cabecalho h2,
+.cf-slide .simulador .cabecalho h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--second-bg-color, #2F5C4F);
+    margin: 0;
+}
+
+.cf-slide .orcamento-cabecalho p,
+.cf-slide .simulador .cabecalho p {
+    color: var(--primary-text-color, #263238);
+    margin-top: 8px;
+}
+
+.cf-slide .orcamento-card,
+.cf-slide .simulador .card {
+    max-width: 680px;
+    border: none;            /* .card do Bootstrap adiciona borda */
+    padding: 36px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cf-slide .orcamento-campos,
+.cf-slide .simulador .campos {
+    gap: 20px;
+}
+
+.cf-slide .orcamento-campo,
+.cf-slide .simulador .campo {
+    gap: 6px;
+}
+
+.cf-slide .orcamento-campo label,
+.cf-slide .simulador .campo label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--primary-text-color, #263238);
+}
+
+.cf-slide .orcamento-campo input,
+.cf-slide .orcamento-campo select,
+.cf-slide .simulador .campo input,
+.cf-slide .simulador .campo select {
+    height: 42px;
+    padding: 0 14px;
+    border: 1.5px solid #D9D9D9;
+    border-radius: 8px;
+    color: var(--primary-text-color, #263238);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* Fundo dos campos igual nas 5 ferramentas
+   (--bg-input-color é redefinida como cinza em message.css, então não dependemos dela) */
+.cf-slide .orcamento-campo input,
+.cf-slide .orcamento-campo select,
+.cf-slide .simulador .campo input,
+.cf-slide .simulador .campo select,
+.cf-slide .calc-grupo input,
+.cf-slide .calc-grupo select,
+.cf-slide .conversor-grupo input,
+.cf-slide .conversor-grupo select {
+    background-color: var(--firty-bg-color, #FAFAF7);
+}
+
+/* Mesma altura de campo na Calculadora de Safra e na de Calagem */
+.cf-slide .calc-grupo input,
+.cf-slide .calc-grupo select {
+    height: 42px;
+}
+
+.cf-slide .orcamento-campo input:focus,
+.cf-slide .orcamento-campo select:focus,
+.cf-slide .simulador .campo input:focus,
+.cf-slide .simulador .campo select:focus {
+    outline: none;
+    border-color: var(--second-bg-color, #2F5C4F);
+}
+
+.cf-slide .orcamento-botao,
+.cf-slide .simulador .card > button {
+    width: auto;
+    margin: 28px auto 0;
+    padding: 12px 36px;
+    border-radius: 30px;
+    background-color: var(--second-bg-color, #2F5C4F);
+    color: #F1E9DC;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.cf-slide .orcamento-botao:hover,
+.cf-slide .simulador .card > button:hover {
+    background-color: var(--third-title-color, #263238);
+}
+
+/* Caixa de resultado: mesmo degradê verde da Calculadora e do Conversor */
+.cf-slide .orcamento-resultado,
+.cf-slide .simulador .resultado {
+    margin-top: 28px;
+    padding: 20px 24px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--second-bg-color, #2F5C4F), #263238);
+    color: #F1E9DC;
+}
+
+.cf-slide .orcamento-resultado h2,
+.cf-slide .simulador .resultado h2 {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--second-title-color, #A5D6A7);
+}
+
+.cf-slide .orcamento-resultado-grid div,
+.cf-slide .simulador .resultadoGrid div {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    text-align: center;
+}
+
+.cf-slide .orcamento-resultado-grid span,
+.cf-slide .simulador .resultadoGrid span {
+    margin: 4px 0 0;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #F1E9DC;
+    opacity: 0.8;
+}
+
+.cf-slide .orcamento-resultado-grid strong,
+.cf-slide .simulador .resultadoGrid strong {
+    font-size: 22px;
+    font-weight: 700;
+    color: #F1E9DC;
+}
+
+/* No orçamento o número vem depois do rótulo no HTML; inverte a ordem visual */
+.cf-slide .orcamento-resultado-grid div,
+.cf-slide .simulador .resultadoGrid div {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* =========================================================
+   Responsivo
+   ========================================================= */
+
+@media (max-width: 991px) {
+    /* Setas descem para a linha dos pontos para não cobrir os formulários */
+    .cf-palco {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+            "janela   janela  janela"
+            "anterior pontos  proximo";
+        column-gap: 12px;
+        row-gap: 20px;
+    }
+
+    .cf-seta {
+        width: 48px;
+        height: 48px;
+    }
+
+    .cf-janela {
+        border-radius: 24px;
+    }
+
+}
+
+/* Abas viram uma faixa que rola na horizontal quando não cabem em uma linha */
+@media (max-width: 1279px) {
+    .cf-abas {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: safe center;
+        overflow-x: auto;
+        position: relative;
+        padding: 4px 2px 8px;
+        scrollbar-width: none;
+    }
+
+    .cf-abas::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cf-aba {
+        padding: 8px 14px;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    #funcionalidades {
+        padding: 50px 4% 60px;
+        gap: 24px;
+    }
+
+    .cf-slide .orcamento-rural,
+    .cf-slide .simulador,
+    .cf-slide #conversor-unidades,
+    .cf-slide #calculadora-safra,
+    .cf-slide #calculadora-calagem,
+    .cf-slide #clima-agricola {
+        padding: 40px 14px;
+    }
+
+    .cf-slide .orcamento-card,
+    .cf-slide .simulador .card {
+        padding: 24px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cf-trilho,
+    .cf-janela,
+    .cf-slide,
+    .cf-ponto,
+    .cf-seta {
+        transition: none;
+    }
+}

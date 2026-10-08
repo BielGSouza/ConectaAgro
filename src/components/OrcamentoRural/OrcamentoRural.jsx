@@ -48,10 +48,10 @@ function OrcamentoRural() {
   }
 
   return (
-    <main className="orcamento-rural">
+    <div className="orcamento-rural">
 
       <section className="orcamento-cabecalho">
-        <h1>Orçamento Rural</h1>
+        <h2>Orçamento Rural</h2>
         <p>
           Calcule uma estimativa dos custos da sua produção de forma
           rápida e personalizada.
@@ -194,7 +194,7 @@ function OrcamentoRural() {
 
       </section>
 
-    </main>
+    </div>
   );
 }
 

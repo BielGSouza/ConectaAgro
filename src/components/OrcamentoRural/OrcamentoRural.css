@@ -13,7 +13,7 @@
     margin-bottom: 30px;
 }
 
-.orcamento-cabecalho h1 {
+.orcamento-cabecalho h2 {
     font-family: "Exo 2", Arial, Helvetica, sans-serif;
     font-size: 48px;
     font-weight: 700;
@@ -149,7 +149,7 @@
         grid-template-columns: 1fr;
     }
 
-    .orcamento-cabecalho h1 {
+    .orcamento-cabecalho h2 {
         font-size: 36px;
     }
 
