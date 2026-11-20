@@ -9,7 +9,7 @@ import '../../css/news.css'
 import NoticiaMaior from '../../assets/pageNews/noticiaMaior.png';
 import FotoTrator from '../../assets/pageNews/fotoTrator.png';
 import FotoGraos from '../../assets/pageNews/fotoGraos.png';
-import ChinaPanama from '../../assets/pageNews/China-e-Panama.jpg';
+import ChinaPanama from '../../assets/pageNews/China-e-panama.jpg';
 import CNA from '../../assets/pageNews/CNA.jpg';
 
 // Imagens da seção "Notícias" (fixas)
@@ -28,7 +28,7 @@ import AgroBaiano from '../../assets/pageNews/agro-baiano.jpg';
 import IA from '../../assets/pageNews/IA.jpg';
 import TratorHibrido from '../../assets/pageNews/tratorhibrido.jpg';
 import Robos from '../../assets/pageNews/robos.png';
-import Irrigacao from '../../assets/pageNews/Irrigacao.png';
+import Irrigacao from '../../assets/pageNews/irrigacao.png';
 
 const News = () => {
   // Estado para armazenar notícias adicionadas dinamicamente
