@@ -2,35 +2,33 @@ import React, { useState } from 'react';
 import '../css/fontes.css'
 import '../css/root.css'
 import '../css/extras.css'
+import { buscarClimaPorCidade } from '../services/clima';
 
 const ClimaAgricola = () => {
-    // Estados para a funcionalidade de clima
     const [climaData, setClimaData] = useState(null);
     const [cidadeClima, setCidadeClima] = useState('');
+    const [carregando, setCarregando] = useState(false);
+    const [erro, setErro] = useState('');
 
-    // Função para buscar clima (simulada - substitua pela API real)
-    const buscarClima = () => {
-        if (!cidadeClima.trim()) {
-            alert('Por favor, digite o nome de uma cidade.');
+    const buscarClima = async (cidade = cidadeClima) => {
+        if (!cidade.trim()) {
+            setErro('Digite o nome de uma cidade para consultar o clima.');
             return;
         }
-
-        // Simulação de dados climáticos - substitua por chamada real à API
-        const dadosSimulados = {
-            nome: cidadeClima,
-            data: new Date().toLocaleDateString('pt-BR'),
-            temperatura: 28,
-            descricao: 'Parcialmente nublado',
-            icone: '⛅',
-            umidade: 65,
-            vento: '12 km/h',
-            chuva: '0 mm',
-            max: 32,
-            min: 22,
-            dica: '🌱 Bom momento para plantio. Solo com umidade adequada.'
-        };
-
-        setClimaData(dadosSimulados);
+        setCarregando(true);
+        setErro('');
+        try {
+            setClimaData(await buscarClimaPorCidade(cidade.trim()));
+        } catch (e) {
+            setClimaData(null);
+            setErro(
+                e.message === 'CIDADE_NAO_ENCONTRADA'
+                    ? `Não encontramos "${cidade}". Confira o nome e tente de novo.`
+                    : 'Não foi possível consultar o clima agora. Verifique sua conexão e tente de novo.'
+            );
+        } finally {
+            setCarregando(false);
+        }
     };
 
     return (
@@ -44,11 +42,12 @@ const ClimaAgricola = () => {
                         placeholder="Digite sua cidade (ex: Ribeirão Preto)"
                         value={cidadeClima}
                         onChange={(e) => setCidadeClima(e.target.value)}
-                        onKeyPress={(e) => e.key === 'Enter' && buscarClima()}
+                        onKeyDown={(e) => e.key === 'Enter' && buscarClima()}
                     />
-                    <button onClick={buscarClima}>Consultar</button>
+                    <button onClick={() => buscarClima()} disabled={carregando}>{carregando ? 'Consultando...' : 'Consultar'}</button>
                 </div>
-                <div id="painel-clima" className='ativo'>
+                {erro && <p role="alert" style={{ color: '#b3261e', marginTop: 12 }}>{erro}</p>}
+                <div id="painel-clima" className='ativo' aria-live="polite">
                     {climaData && (
                         <div className="clima-card">
                             <div className="clima-topo">
