@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../css/CarrinhoDeCompras.css';
+import CheckoutModal from './CheckoutModal';
 
 const CarrinhoDeCompras = ({ produtosSelecionados, setProdutosSelecionados }) => {
 
@@ -10,14 +11,17 @@ const CarrinhoDeCompras = ({ produtosSelecionados, setProdutosSelecionados }) =>
         setProdutosSelecionados(novosProdutos);
     } 
 
+    const [checkoutAberto, setCheckoutAberto] = useState(false);
+
     const finalizarCompra = () => {
-        if(produtosSelecionados.length === 0) {
-            alert('Seu carrinho está vazio. Adicione produtos antes de finalizar a compra.');
-            return;
-        }
-        alert('Compra finalizada com sucesso!');
-        setProdutosSelecionados([]); // Limpa o carrinho após finalizar a compra
-        setCarrinhoAberto(false); // Fecha o carrinho após finalizar a compra
+        // O botão fica desativado com o carrinho vazio, mas validamos mesmo assim
+        if (produtosSelecionados.length === 0) return;
+        setCheckoutAberto(true);
+    }
+
+    const concluirCompra = () => {
+        setProdutosSelecionados([]); // limpa o carrinho depois do pedido confirmado
+        setCarrinhoAberto(false);
     }
 
     return (
@@ -40,7 +44,7 @@ const CarrinhoDeCompras = ({ produtosSelecionados, setProdutosSelecionados }) =>
                     </div>
                     {produtosSelecionados.length === 0 ? (
                         <div className="carrinho-vazio">
-                            <p className='mb-0'>Seu carrinho está vazio</p>
+                            <p className='mb-0'>Seu carrinho está vazio. Adicione um produto da loja.</p>
                             <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#817d7d"><path d="M444-576v-132H312v-72h132v-132h72v132h132v72H516v132h-72ZM213-117.21q-21-21.21-21-51T213.21-219q21.21-21 51-21T315-218.79q21 21.21 21 51T314.79-117q-21.21 21-51 21T213-117.21Zm432 0q-21-21.21-21-51T645.21-219q21.21-21 51-21T747-218.79q21 21.21 21 51T746.79-117q-21.21 21-51 21T645-117.21ZM48-792v-72h133l155 360h301l113-264h78L703-476q-9 20-26.5 32T637-432H317l-42 72h493v72H276q-42 0-63-36.5t0-71.5l52-90-131-306H48Z" /></svg>
                         </div>
                     ) : (
@@ -67,9 +71,16 @@ const CarrinhoDeCompras = ({ produtosSelecionados, setProdutosSelecionados }) =>
                         <div className='info-carrinho'>
                             <p className='mb-0'>Total: R$ {produtosSelecionados.reduce((total, produto) => total + (produto.preco * produto.quantidade), 0).toFixed(2)}</p>
                         </div>
-                        <button className='btn-finalizar' onClick={finalizarCompra}>Finalizar Compra</button>
+                        <button className='btn-finalizar' onClick={finalizarCompra} disabled={produtosSelecionados.length === 0}>Finalizar compra</button>
                     </div>
                 </div>
+            )}
+            {checkoutAberto && (
+                <CheckoutModal
+                    itens={produtosSelecionados}
+                    aoFechar={() => setCheckoutAberto(false)}
+                    aoConcluir={concluirCompra}
+                />
             )}
         </>
     )
