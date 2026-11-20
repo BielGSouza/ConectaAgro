@@ -3,7 +3,7 @@ import FTGabriel from '../assets/fotosCriadores/Gabriel.jpg'
 import FTFelipe from '../assets/fotosCriadores/Felipe.jpg'
 import FTHariel from '../assets/fotosCriadores/Hariel.jpg'
 import FTMike from '../assets/fotosCriadores/Mike.jpg'
-import FTPedro from '../assets/fotosCriadores/Pedro.jpg'
+import FTMatheus from '../assets/fotosCriadores/Matheus.jpg'
 
 const Footer = () => {
   return (
@@ -68,13 +68,13 @@ const Footer = () => {
 
             <div className="card-criador">
               <img 
-                src={FTPedro}
-                alt="Foto do Pedro, um dos criadores da ConectaAgro." 
+                src={FTMatheus}
+                alt="Foto do Matheus, um dos criadores da ConectaAgro." 
                 width="140"
               />
               <div className="d-flex flex-column align-items-center">
-                <p className="mb-0 fw-bold p-card-criadores-nome">Pedro Dutra</p>
-                <p className="mb-0 p-card-criadores-rm">RM569816</p>
+                <p className="mb-0 fw-bold p-card-criadores-nome">Matheus Marques</p>
+                <p className="mb-0 p-card-criadores-rm">RM574122</p>
               </div>
             </div>
           </div>
