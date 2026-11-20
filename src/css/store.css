@@ -323,3 +323,36 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+/* Banners da seção de produtos */
+.arte {
+    max-width: 1000px;
+    height: auto;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.arte img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.arte-menor {
+    max-width: 700px;
+}
+
+/* Nome do produto: limita a 2 linhas para não estourar o card */
+.nome-produto {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin-top: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.add-carrinho {
+    border: none;
+    padding: 0;
+}
