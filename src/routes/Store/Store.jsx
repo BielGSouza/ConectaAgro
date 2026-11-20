@@ -26,58 +26,40 @@ import VetoresLinhas from '../../assets/vetores/vetoresLinhas.svg';
 import IconeCaixa from '../../assets/sectionStore/box_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
 import IconeCartao from '../../assets/sectionStore/credit_card_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
 
-// Importações dos produtos
-import Enxada from '../../assets/produtos/enxada.jpg';
-import SacoSilagem from '../../assets/produtos/saco-de-silagem.jpg';
-import SementeUva from '../../assets/produtos/semente-uva.webp';
-import SementeCalendula from '../../assets/produtos/semente-calendula.jpg';
-import SementeOnzeHoras from '../../assets/produtos/semente-onze-horas.jpg';
-import SementeCapuchinha from '../../assets/produtos/semente-capuchinha.jpg';
+// Banners das faixas da seção de produtos
+import BannerFrete from '../../assets/sectionStore/banner_faixa_frete_gratis_recortado.png';
+import BannerPromocao from '../../assets/sectionStore/banner_150px_promocao_recortado.png';
+
+// Catálogo de produtos
+import { melhoresOfertas, listaProdutos, paraVoce } from '../../data/produtos';
+
+const IconeCarrinho = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M444-576v-132H312v-72h132v-132h72v132h132v72H516v132h-72ZM213-117.21q-21-21.21-21-51T213.21-219q21.21-21 51-21T315-218.79q21 21.21 21 51T314.79-117q-21.21 21-51 21T213-117.21Zm432 0q-21-21.21-21-51T645.21-219q21.21-21 51-21T747-218.79q21 21.21 21 51T746.79-117q-21.21 21-51 21T645-117.21ZM48-792v-72h133l155 360h301l113-264h78L703-476q-9 20-26.5 32T637-432H317l-42 72h493v72H276q-42 0-63-36.5t0-71.5l52-90-131-306H48Z" /></svg>
+);
+
+// Card de produto reutilizado em todas as seções da loja
+const CardProduto = ({ produto, aoAdicionar, destaque = false }) => (
+    <div className={`card-produto${destaque ? ' card-main' : ''}`}>
+        <img src={produto.imagem} alt={produto.nome} />
+        <p className="nome-produto paragrafo mb-0 text-center">{produto.nome}</p>
+        <p className="pagrafo mb-0 fw-medium">
+            {produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+        </p>
+        <button
+            type="button"
+            className="add-carrinho"
+            onClick={() => aoAdicionar(produto)}
+            aria-label={`Adicionar ${produto.nome} ao carrinho`}
+        >
+            <IconeCarrinho />
+        </button>
+    </div>
+);
 
 const Store = () => {
     // Referências para os carrosséis de produtos
     const carrosselRef = useRef(null);
     const carrosselRef2 = useRef(null);
-
-    //Array com produtos (exemplo)
-    const produtos = [
-        {
-            id: 1,
-            nome: "Enxada com cabo de madeira",
-            preco: 75.90,
-            imagem: Enxada
-        },
-        {
-            id: 2,
-            nome: "Saco de cilagem",
-            preco: 27.50,
-            imagem: SacoSilagem
-        },
-        {
-            id: 3,
-            nome: "Semente de uva",
-            preco: 32.49,
-            imagem: SementeUva
-        },
-        {
-            id: 4,
-            nome: "Semente de Calêndula",
-            preco: 75.90,
-            imagem: SementeCalendula
-        },
-        {
-            id: 5,
-            nome: "Semente de Onze Horas",
-            preco: 75.90,
-            imagem: SementeOnzeHoras
-        },
-        {
-            id: 6,
-            nome: "Semente de Capuchinha",
-            preco: 75.90,
-            imagem: SementeCapuchinha
-        },
-    ]
 
     // Função para mover o carrossel de produtos
     const mover = (direcao) => {
@@ -263,19 +245,8 @@ const Store = () => {
                             onClick={() => mover('direita')}
                         />
                         <div id="tela-rolavel-produtos" ref={carrosselRef}>
-                            {produtos.map((produto, index) => (
-                                <div
-                                    className="card-produto"
-                                    key={index}
-                                >
-                                    <img src={produto.imagem} alt="Enxada preta e afiada" />
-                                    <p className="paragrafo mb-0 text-center">{produto.nome}</p>
-                                    <p className="pagrafo mb-0 fw-medium">R$ {produto.preco.toFixed(2)}</p>
-
-                                    <div className='add-carrinho' onClick={() => adicionarAoCarrinho(produto)}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M444-576v-132H312v-72h132v-132h72v132h132v72H516v132h-72ZM213-117.21q-21-21.21-21-51T213.21-219q21.21-21 51-21T315-218.79q21 21.21 21 51T314.79-117q-21.21 21-51 21T213-117.21Zm432 0q-21-21.21-21-51T645.21-219q21.21-21 51-21T747-218.79q21 21.21 21 51T746.79-117q-21.21 21-51 21T645-117.21ZM48-792v-72h133l155 360h301l113-264h78L703-476q-9 20-26.5 32T637-432H317l-42 72h493v72H276q-42 0-63-36.5t0-71.5l52-90-131-306H48Z" /></svg>
-                                    </div>
-                                </div>
+                            {melhoresOfertas.map((produto) => (
+                                <CardProduto key={produto.id} produto={produto} aoAdicionar={adicionarAoCarrinho} />
                             ))}
                         </div>
                         <img
@@ -295,24 +266,21 @@ const Store = () => {
                 </section>
 
                 <section id="produtos">
-                    <div className="arte">Lugar para arte de ecommerce</div>
+                    <div className="arte">
+                        <img src={BannerFrete} alt="Frete grátis para todo o Brasil" />
+                    </div>
                     <p className="p-store" id="p-two">Produtos</p>
                     <div id="dad-lista-de-produtos">
                         <div id="lista-de-produtos">
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
-                            <div className="card-produto card-main" />
+                            {listaProdutos.map((produto) => (
+                                <CardProduto key={produto.id} produto={produto} aoAdicionar={adicionarAoCarrinho} destaque />
+                            ))}
                         </div>
                     </div>
                     <p id="p-ver-todos" className="mb-0 paragrafo">Ver Todos</p>
-                    <div className="arte">Lugar para arte de ecommerce</div>
+                    <div className="arte arte-menor">
+                        <img src={BannerPromocao} alt="Promoção: até 50% off em produtos selecionados" />
+                    </div>
                 </section>
 
                 <section id="para-voce">
@@ -326,14 +294,9 @@ const Store = () => {
                             onClick={() => moverTwo('direita')}
                         />
                         <div id="tela-rolavel-produtos2" ref={carrosselRef2}>
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
+                            {paraVoce.map((produto) => (
+                                <CardProduto key={produto.id} produto={produto} aoAdicionar={adicionarAoCarrinho} />
+                            ))}
                         </div>
                         <img
                             id="btn-esquerda2"
