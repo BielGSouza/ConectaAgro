@@ -1,9 +1,8 @@
 # ConectaAgro
 
-Site do projeto **Agrotech** (PBL - FIAP ON 2026), desenvolvido pelo **Grupo 25**.
+Site do projeto **Agrotech** (PBL - FIAP ON 2026).
 O ConectaAgro reúne notícias do campo, ferramentas para o produtor rural, previsão do clima agrícola, uma loja virtual (AgroHub) e um canal de atendimento (SAC).
 
-Site publicado: https://bielgsouza.github.io/ConectaAgro/
 
 ## Equipe
 
