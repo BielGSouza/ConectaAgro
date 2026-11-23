@@ -1,294 +1,72 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Header from "../../components/Header";
-import '../../css/message.css';
+import { useEffect, useMemo, useState } from 'react';
+import Header from '../../components/Header';
+import ContactList from '../../components/chat/ContactList';
+import ChatWindow from '../../components/chat/ChatWindow';
+import { useChat } from '../../components/chat/useChat';
+import { normalizar } from '../../components/chat/utils';
 
-// Importações dos ícones da seção de mensagens
-import IconeImagem from '../../assets/sectionMessage/image_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
-import IconeEnviar from '../../assets/sectionMessage/send_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
+import '../../css/fontes.css';
+import '../../css/root.css';
+import '../../css/chat.css';
 
-const Message = () => {
-  // Estados para controle do modal e mensagens
-  const [modalAberto, setModalAberto] = useState(false);
-  const [contatoSelecionado, setContatoSelecionado] = useState('');
-  const [mensagens, setMensagens] = useState({});
-  const [mensagemAtual, setMensagemAtual] = useState('');
-  const [mensagemModal, setMensagemModal] = useState('');
-  const [contatos, setContatos] = useState([
-    'Ronaldinho Gaucho',
-    'Marcão',
-    'Edmilson',
-    'Roque Junior',
-    'Lucio',
-    'Roberto Carlos',
-    'Cafu',
-    'Ronaldo',
-    'Rilvaldo',
-    'Gilberto Silva',
-    'Klebérson'
-  ]);
+// Troque por dados do backend quando houver. O `id` precisa ser único e estável.
+const CONTATOS = [
+  { id: 'ronaldinho-gaucho', nome: 'Ronaldinho Gaucho' },
+  { id: 'marcao', nome: 'Marcão' },
+  { id: 'edmilson', nome: 'Edmilson' },
+  { id: 'roque-junior', nome: 'Roque Junior' },
+  { id: 'lucio', nome: 'Lucio' },
+  { id: 'roberto-carlos', nome: 'Roberto Carlos' },
+  { id: 'cafu', nome: 'Cafu' },
+  { id: 'ronaldo', nome: 'Ronaldo' },
+  { id: 'rilvaldo', nome: 'Rilvaldo' },
+  { id: 'gilberto-silva', nome: 'Gilberto Silva' },
+  { id: 'kleberson', nome: 'Klebérson' },
+];
 
-  const messagesEndRef = useRef(null);
-  const messagesModalEndRef = useRef(null);
-  const dialogRef = useRef(null);
+const USUARIO = 'nome_usuario'; // virá do login
+const SEM_MENSAGENS = [];
 
-  // Função para abrir o modal
-  const abrirModal = (nome) => {
-    setContatoSelecionado(nome);
-    setModalAberto(true);
-    if (dialogRef.current) {
-      dialogRef.current.showModal();
-    }
-    // Atualiza o cabeçalho da mensagem
-    document.getElementById('p-header-mensagem').textContent = nome;
-    document.getElementById('p-header-modal').textContent = nome;
-  };
-
-  // Função para fechar o modal
-  const closeModal = () => {
-    setModalAberto(false);
-    if (dialogRef.current) {
-      dialogRef.current.close();
-    }
-  };
-
-  // Função para enviar mensagem (versão desktop)
-  const enviarMensagem = () => {
-    if (!mensagemAtual.trim() || !contatoSelecionado) return;
-
-    const novaMensagem = {
-      id: Date.now(),
-      texto: mensagemAtual,
-      remetente: 'eu',
-      hora: new Date().toLocaleTimeString()
-    };
-
-    setMensagens(prev => ({
-      ...prev,
-      [contatoSelecionado]: [...(prev[contatoSelecionado] || []), novaMensagem]
-    }));
-
-    setMensagemAtual('');
-    
-    // Simular resposta automática
-    setTimeout(() => {
-      const resposta = {
-        id: Date.now() + 1,
-        texto: 'Obrigado pela mensagem! Em breve retorno.',
-        remetente: 'contato',
-        hora: new Date().toLocaleTimeString()
-      };
-      setMensagens(prev => ({
-        ...prev,
-        [contatoSelecionado]: [...(prev[contatoSelecionado] || []), resposta]
-      }));
-    }, 1000);
-  };
-
-  // Função para enviar mensagem (versão modal)
-  const enviarMensagemModal = () => {
-    if (!mensagemModal.trim() || !contatoSelecionado) return;
-
-    const novaMensagem = {
-      id: Date.now(),
-      texto: mensagemModal,
-      remetente: 'eu',
-      hora: new Date().toLocaleTimeString()
-    };
-
-    setMensagens(prev => ({
-      ...prev,
-      [contatoSelecionado]: [...(prev[contatoSelecionado] || []), novaMensagem]
-    }));
-
-    setMensagemModal('');
-
-    // Simular resposta automática
-    setTimeout(() => {
-      const resposta = {
-        id: Date.now() + 1,
-        texto: 'Obrigado pela mensagem! Em breve retorno.',
-        remetente: 'contato',
-        hora: new Date().toLocaleTimeString()
-      };
-      setMensagens(prev => ({
-        ...prev,
-        [contatoSelecionado]: [...(prev[contatoSelecionado] || []), resposta]
-      }));
-    }, 1000);
-  };
-
-  // Efeito para scroll automático nas mensagens
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [mensagens, contatoSelecionado]);
+export default function Message() {
+  const { conversas, naoLidas, digitando, ativoId, abrir, fechar, enviar } = useChat();
+  const [busca, setBusca] = useState('');
 
   useEffect(() => {
-    if (messagesModalEndRef.current) {
-      messagesModalEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [mensagens, contatoSelecionado]);
+    document.title = 'ConectaAgro - Mensagem';
+  }, []);
 
-  // Função para lidar com Enter no textarea
-  const handleKeyPress = (e, tipo) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      if (tipo === 'desktop') {
-        enviarMensagem();
-      } else {
-        enviarMensagemModal();
-      }
-    }
-  };
+  // Filtra pela busca (sem acento) e põe no topo quem conversou por último.
+  const contatosVisiveis = useMemo(() => {
+    const termo = normalizar(busca.trim());
+    return CONTATOS.filter((c) => normalizar(c.nome).includes(termo))
+      .map((c) => ({ ...c, ultima: conversas[c.id]?.at(-1) }))
+      .sort((a, b) => (b.ultima?.ts ?? 0) - (a.ultima?.ts ?? 0));
+  }, [busca, conversas]);
 
-  useEffect(() => {
-      document.title = "ConectaAgro - Mensagem"
-    }, [])
+  const contatoAtivo = CONTATOS.find((c) => c.id === ativoId) ?? null;
 
   return (
     <>
       <Header />
-      <main id="main-message">
-        <section id="contatos">
-          <div id="contatos-header">
-            <p id="p-header-contato">nome_usuario</p>
-            <input 
-              type="text" 
-              id="input-header-contatos" 
-              placeholder="Pesquisar contatos..." 
-            />
-          </div>
-
-          <div id="contatos-body">
-            {contatos.map((contato, index) => (
-              <div 
-                key={index}
-                className="card-contato" 
-                onClick={() => abrirModal(contato)}
-              >
-                <div className="d-flex gap-2 align-items-center">
-                  <div className="foto-contato" />
-                  <p className="mb-0 paragrafo">{contato}</p>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2F5D50">
-                  <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
-                </svg>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="mensagens">
-          <div id="div-header-mensagem">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              height="24px" 
-              viewBox="0 -960 960 960" 
-              width="24px" 
-              fill="#2F5D50" 
-              onClick={closeModal}
-            >
-              <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
-            </svg>
-            <p className="mb-0" id="p-header-mensagem">{contatoSelecionado || 'Selecione um contato'}</p>
-          </div>
-          <div id="div-body-mensagem">
-            {contatoSelecionado && mensagens[contatoSelecionado]?.map((msg) => (
-              <div 
-                key={msg.id}
-                className={`mensagem ${msg.remetente === 'eu' ? 'mensagem-enviada' : 'mensagem-recebida'}`}
-              >
-                <p className="mb-0">{msg.texto}</p>
-                <span className="hora-mensagem">{msg.hora}</span>
-              </div>
-            ))}
-            <div ref={messagesEndRef} />
-          </div>
-          <div id="div-head-mensagem">
-            <div id="input">
-              <div id="input-message">
-                <textarea 
-                  id="text-area-message" 
-                  placeholder="Digite sua mensagem..."
-                  value={mensagemAtual}
-                  onChange={(e) => setMensagemAtual(e.target.value)}
-                  onKeyPress={(e) => handleKeyPress(e, 'desktop')}
-                />
-                <img 
-                  id="icon-image"
-                  src={IconeImagem}
-                  alt="Ícone de imagem" 
-                />
-                <button id="btn-send-message" onClick={enviarMensagem}>
-                  <img 
-                    id="icon-send"
-                    src={IconeEnviar}
-                    alt="Enviar mensagem" 
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* data-view só importa no celular: decide se aparece a lista ou a conversa */}
+      <main className="chat" data-view={contatoAtivo ? 'conversa' : 'lista'}>
+        <ContactList
+          usuario={USUARIO}
+          contatos={contatosVisiveis}
+          ativoId={ativoId}
+          naoLidas={naoLidas}
+          busca={busca}
+          onBusca={setBusca}
+          onAbrir={abrir}
+        />
+        <ChatWindow
+          contato={contatoAtivo}
+          mensagens={conversas[ativoId] ?? SEM_MENSAGENS}
+          digitando={Boolean(digitando[ativoId])}
+          onVoltar={fechar}
+          onEnviar={(conteudo) => enviar(ativoId, conteudo)}
+        />
       </main>
-
-      <dialog id="tela-mensagem-mobile" ref={dialogRef}>
-        <section id="section-mensagem-modal">
-          <div id="div-header-mensagem-modal">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              height="24px" 
-              viewBox="0 -960 960 960" 
-              width="24px" 
-              fill="#2F5D50" 
-              onClick={closeModal}
-            >
-              <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
-            </svg>
-            <p className="mb-0" id="p-header-modal">{contatoSelecionado || 'Selecione um contato'}</p>
-          </div>
-          <div id="div-body-mensagem-modal">
-            {contatoSelecionado && mensagens[contatoSelecionado]?.map((msg) => (
-              <div 
-                key={msg.id}
-                className={`mensagem ${msg.remetente === 'eu' ? 'mensagem-enviada' : 'mensagem-recebida'}`}
-              >
-                <p className="mb-0">{msg.texto}</p>
-                <span className="hora-mensagem">{msg.hora}</span>
-              </div>
-            ))}
-            <div ref={messagesModalEndRef} />
-          </div>
-          <div id="div-head-mensagem-modal">
-            <div id="input">
-              <div id="input-message">
-                <textarea 
-                  id="text-area-message-modal" 
-                  placeholder="Digite sua mensagem..."
-                  value={mensagemModal}
-                  onChange={(e) => setMensagemModal(e.target.value)}
-                  onKeyPress={(e) => handleKeyPress(e, 'modal')}
-                />
-                <img 
-                  id="icon-image"
-                  src={IconeImagem}
-                  alt="Ícone de imagem" 
-                />
-                <button id="btn-send-message-modal" onClick={enviarMensagemModal}>
-                  <img 
-                    id="icon-send"
-                    src={IconeEnviar}
-                    alt="Enviar mensagem" 
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </dialog>
     </>
   );
-};
-
-export default Message;
+}
