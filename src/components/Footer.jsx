@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
         <p className="p-copy mb-0">PBL Agrotech FIAP ON 2026</p>
         <a 
-          href="https://youtu.be/nKiHFo1UqO0?si=wCCn4oMiKYnMu-oy" 
+          href="https://www.youtube.com/watch?v=B1WoIHm3nVo" 
           id="link-video-pitch"
           target="_blank"
           rel="noopener noreferrer"
